@@ -33,3 +33,23 @@ CREATE TABLE IF NOT EXISTS "COMMENT" (
   CONSTRAINT "FK_COMMENT_POST_ID" FOREIGN KEY ("POST_ID")
           REFERENCES "POST" ("ID") ON DELETE CASCADE
 );
+
+INSERT INTO "POST" ("NAME", "IMAGE_URL", "DESCRIPTION")
+VALUES
+("Plov", "url-1", "description-1"),
+("Pasta", "url-2", "description-2"),
+("Pizza", "url-3", "description-3");
+
+INSERT INTO "TAG" ("NAME", "POST_ID")
+VALUES
+("#meat", 1),
+("#chees", 3),
+("#mmm", 2),
+("#rise", 1);
+
+INSERT INTO "LIKE" ("COUNT", "POST_ID")
+VALUES
+(1, 1),
+(2, 2),
+(4, 3);
+
