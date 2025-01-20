@@ -3,7 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Название страницы-->
     <title>Posts Feed</title>
 
     <link rel="stylesheet" type="text/css" th:href="@{/static/style/css.css}">
@@ -12,44 +11,32 @@
 <body>
 <h1>POSTS</h1>
 <button class="btn-add" onclick="toggleForm()">Добавить пост</button>
+
 <table>
     <thead>
     <tr>
+<!--        <th>ID</th>-->
         <th>Имя</th>
         <th>Картинка</th>
         <th>Описание</th>
         <th>Количество лайков</th>
         <th>Количество комментариев</th>
-<!--        <th>Тэги</th>-->
+        <th>Тэги</th>
     </tr>
     </thead>
 
-    <!-- Тестовые данные для отображения-->
     <tbody>
 
-    <!-- Цикл по пользователям из атрибута users-->
-    <!-- Вставляем идентификаторы и остальные атрибуты-->
-<!--    <tr>-->
-<!--        <td>Pizza</td>-->
-<!--        <td>some-url</td>-->
-<!--        <td>The best pizza in the world !!!</td>-->
-<!--        <td>30</td>-->
-<!--        <td>5</td>-->
-
-    <tr th:each="postFeedDto : ${feed}">
-        <td th:text="${postFeedDto.name}"></td>
-        <td th:text="${postFeedDto.imageUrl}"></td>
-        <td th:text="${postFeedDto.abbreviatedDescription}"></td>
-        <td th:text="${postFeedDto.likesCount}"></td>
-        <td th:text="${postFeedDto.commentsCount}"></td>
-<!--        <td th:text="${post.tags}"></td>-->
-<!--        <td class="actions">-->
-<!--            &lt;!&ndash;            <button>Удалить</button>&ndash;&gt;-->
-<!--            <form th:action="@{/users/{id}(id=${user.id})}" method="post" style="display:inline;">-->
-<!--                <input type="hidden" name="_method" value="delete">-->
-<!--                <button type="submit">Удалить</button>-->
-<!--            </form>-->
-<!--        </td>-->
+    <tr th:each="postsFeed : ${feed}">
+<!--        <td th:text="${postsFeed.id}"></td>-->
+        <td th:text="${postsFeed.name}"></td>
+        <td th:text="${postsFeed.imageUrl}"></td>
+        <td th:text="${postsFeed.abbreviatedDescription}"></td>
+        <td th:text="${postsFeed.likesCount}"></td>
+        <td th:text="${postsFeed.commentsCount}"></td>
+        <td>
+            <p th:each="tag: ${postsFeed.tags}"> <span th:text="${tag}"/>
+        </td>
     </tr>
     </tbody>
 

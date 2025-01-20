@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface PostService {
     List<PostsFeed> findAll();
-    List<PostFeedDto> findAllPosts();
+    //List<PostFeedDto> findAllPosts();
 }

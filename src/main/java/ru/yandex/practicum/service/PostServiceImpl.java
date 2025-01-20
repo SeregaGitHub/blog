@@ -15,12 +15,11 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<PostsFeed> findAll() {
-        //System.out.println(postsFeeds);
         return repository.findAll();
     }
 
-    @Override
+    /*@Override
     public List<PostFeedDto> findAllPosts() {
         return repository.findAllPosts();
-    }
+    }*/
 }
