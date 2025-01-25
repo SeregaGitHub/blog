@@ -15,7 +15,6 @@
 <table>
     <thead>
     <tr>
-<!--        <th>ID</th>-->
         <th>Имя</th>
         <th>Картинка</th>
         <th>Описание</th>
@@ -28,7 +27,6 @@
     <tbody>
 
     <tr th:each="postsFeed : ${feed}">
-<!--        <td th:text="${postsFeed.id}"></td>-->
         <td th:text="${postsFeed.name}"></td>
         <td th:text="${postsFeed.imageUrl}"></td>
         <td th:text="${postsFeed.abbreviatedDescription}"></td>

@@ -1,6 +1,7 @@
 package ru.yandex.practicum.configuration;
 
-import org.h2.Driver;
+//import org.h2.Driver;
+import org.postgresql.Driver;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,18 +13,23 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 import javax.sql.DataSource;
+//import java.sql.Driver;
 
 @Configuration
 public class DataSourceConfiguration {
 
     @Bean
     public DataSource dataSource(
-            @Value("jdbc:h2:mem:usersdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE") String url,
-            @Value("sa") String username,
-            @Value("password") String password
+            @Value("${spring.datasource.url}") String url,
+            @Value("${spring.datasource.username}") String username,
+            @Value("${spring.datasource.password}") String password
+//            @Value("jdbc:postgresql://localhost:5432/blog") String url,
+//            @Value("sa") String username,
+//            @Value("password") String password
     ) {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(Driver.class.getName());
+        //dataSource.setDriverClassName(@Value("${spring.datasource.driverClassName}"));
         dataSource.setUrl(url);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
