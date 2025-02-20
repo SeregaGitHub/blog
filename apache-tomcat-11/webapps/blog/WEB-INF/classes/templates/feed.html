@@ -10,17 +10,17 @@
 </head>
 <body>
 <h1>POSTS</h1>
-<button class="btn-add" onclick="toggleForm()">Добавить пост</button>
+<button class="btn-add" onclick="toggleForm()">Add Post</button>
 
 <table>
     <thead>
     <tr>
-        <th>Имя</th>
-        <th>Картинка</th>
-        <th>Описание</th>
-        <th>Количество лайков</th>
-        <th>Количество комментариев</th>
-        <th>Тэги</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Likes Count</th>
+        <th>Comments Count</th>
+        <th>Tags</th>
     </tr>
     </thead>
 
@@ -32,31 +32,46 @@
         <td th:text="${postsFeed.abbreviatedDescription}"></td>
         <td th:text="${postsFeed.likesCount}"></td>
         <td th:text="${postsFeed.commentsCount}"></td>
-        <td>
+        <td th:text="${postsFeed.tags}"></td>
+        <!--<td>
             <p th:each="tag: ${postsFeed.tags}"> <span th:text="${tag}"/>
-        </td>
+        </td>-->
     </tr>
     </tbody>
 
 </table>
 
-<!-- Скрываемая форма для добавления нового пользователя -->
-<!--<div class="form-container" style="display: none;" id="userForm">-->
-<!--    <h2>Добавить пользователя</h2>-->
-<!--    <form th:action="@{/users}" method="POST">-->
-<!--        <label for="firstName">Имя:</label>-->
-<!--        <input type="text" id="firstName" name="firstName" required>-->
-<!--        <label for="lastName">Фамилия:</label>-->
-<!--        <input type="text" id="lastName" name="lastName" required>-->
-<!--        <label for="age">Возраст:</label>-->
-<!--        <input type="number" id="age" name="age" required>-->
-<!--        <label for="active">Активен:</label>-->
-<!--        <input type="checkbox" id="active" name="active">-->
-<!--        <button type="submit">Добавить</button>-->
-<!--    </form>-->
-<!--</div>-->
+<div class="form-container" style="display: none;" id="postForm">
+    <h2>Create Post</h2>
+    <form th:action="@{/feed}" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="imageUrl">Image:</label>
+        <input type="text" id="imageUrl" name="imageUrl" required>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
+        <label for="tags">Tags:</label>
+        <input type="text" id="tags" name="tags" required>
+        <button type="submit">Create</button>
+    </form>
+</div>
 
-<!--<script type="text/javascript" th:src="@{/static/script/js.js}"></script>-->
+<!--<div class="form-container" style="display: none;" id="postForm">
+    <h2>Create Post</h2>
+    <form th:action="@{/feed}" method="POST">
+        <label for="firstName">Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <label for="lastName">Фамилия:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <label for="age">Возраст:</label>
+        <input type="number" id="age" name="age" required>
+        <label for="active">Активен:</label>
+        <input type="checkbox" id="active" name="active">
+        <button type="submit">Добавить</button>
+    </form>
+</div>-->
+
+<script type="text/javascript" th:src="@{/static/script/js.js}"></script>
 
 <!--<script>-->
 <!--    function toggleForm() {-->

@@ -1,0 +1,33 @@
+CREATE OR REPLACE FUNCTION double_insert(
+    country character varying,
+    city character varying,
+    name character varying,
+    login character varying,
+    password character varying,
+    email character varying,
+    role integer,
+    address character varying)
+  RETURNS void AS
+$BODY$
+DECLARE
+    country ALIAS FOR $1;
+    city ALIAS FOR $2;
+    name ALIAS FOR $3;
+    login ALIAS FOR $4;
+    password ALIAS FOR $5;
+    email ALIAS FOR $6;
+    role ALIAS FOR $7;
+    address ALIAS FOR $8;
+    addrid integer;
+BEGIN
+
+    INSERT INTO "address"("country", "city")
+    VALUES (country, city) RETURNING "id" INTO addrid;
+    INSERT INTO users ("name", "login", "password", "email", "create_date", "role", "address")
+    VALUES (name,login, password, email, now()::timestamp, role, addrid);
+
+END
+$BODY$
+  LANGUAGE plpgsql;
+
+SELECT * FROM таблица LIMIT 10 OFFSET n; -- Значение 'n' — это число строк, которые следует пропустить.

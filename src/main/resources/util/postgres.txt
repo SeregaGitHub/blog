@@ -118,3 +118,40 @@ MERGE INTO "COMMENT" KEY ("ID") VALUES (3, 'SOME_COMMENT-3', 3);
 
 SELECT SUBSTRING(description[1], 1, 70) FROM post;
 
+------------------------------------------------------
+SELECT p.name, string_agg(t.name, ' ')  -- WORK !!!
+FROM post p
+JOIN tag t ON t.post_id = p.id
+GROUP BY p.name
+
+
+INSERT INTO post (name, image_url, description)
+VALUES
+('name-11', 'url-11', ARRAY['description-11', 'description-12', 'description-13']);
+
+INSERT INTO post (name, image_url, description)
+	VALUES
+	('name-222', 'url-22', ARRAY['description-221', 'description-222', 'description-223'])
+  RETURNING id;
+------------------------------------------------------
+
+-- Post Feed
+SELECT p.id, p.name, p.image_url, SUBSTRING(p.description[1], 1, 7) AS abbreviatedDescription,
+COUNT(c.post_id) AS commentCount, COALESCE (l.count, 0) AS likesCount, COALESCE (STRING_AGG(DISTINCT t.name, ' '), '') AS tags
+FROM post p
+LEFT JOIN comment c ON c.post_id = p.id
+LEFT JOIN likes l ON l.post_id = p.id
+LEFT JOIN post_tag pt ON p.id = pt.post_id
+LEFT JOIN tag t ON t.id = pt.tag_id
+GROUP BY p.id, p.name, c.post_id, l.count
+ORDER BY p.id
+OFFSET 0
+LIMIT 20;
+
+-- Добавление лайка. post_id = 4
+INSERT INTO likes (count, post_id)
+VALUES
+(1, 4)
+ON CONFLICT (post_id) DO UPDATE
+SET count = likes.count + 1
+WHERE likes.post_id = 4;
