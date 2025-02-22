@@ -2,9 +2,11 @@ package ru.yandex.practicum.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.dto.PostFeedDto;
 import ru.yandex.practicum.model.PostsFeed;
 import ru.yandex.practicum.repository.PostRepositoryImpl;
+import ru.yandex.practicum.util.Utilities;
 
 import java.util.List;
 
@@ -16,6 +18,11 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<PostsFeed> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public void save(CreatePostDto createPostDto) {
+        repository.save(Utilities.toPostDto(createPostDto));
     }
 
     /*@Override

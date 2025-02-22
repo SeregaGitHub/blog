@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS post (
   name varchar(64) NOT NULL,
   image_url varchar(512) NOT NULL,
   description text[] NOT NULL,
-  commentsCount INTEGER,
+  commentsCount INTEGER DEFAULT 0,
   CONSTRAINT pk_post_id PRIMARY KEY (id)
 );
 

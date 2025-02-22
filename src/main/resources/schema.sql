@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS post (
   name varchar(64) NOT NULL,
   image_url varchar(512) NOT NULL,
   description text[] NOT NULL,
-  commentsCount INTEGER,
+  commentsCount INTEGER DEFAULT 0,
   CONSTRAINT pk_post_id PRIMARY KEY (id)
 );
 
@@ -128,7 +128,32 @@ BEGIN
 END;'
 ;
 
+-- create new post
+CREATE OR REPLACE PROCEDURE create_new_post(IN post_name varchar, IN image_url varchar)--, IN description text[], IN tags_array varchar[])
+LANGUAGE plpgsql
+AS
+'
+DECLARE
+  p_id INT;
+  tags_id_arr int[];
+BEGIN
+  INSERT INTO post(name, image_url, description, commentsCount)
+	VALUES
+	(post_name, image_url, null, 0)
+	ON CONFLICT DO NOTHING
+	RETURNING id INTO p_id;
 
+--	INSERT INTO tag(name)
+--	VALUES (unnest(tags_array))
+--	ON CONFLICT DO NOTHING;
+--
+--	SELECT ARRAY_AGG(t.id) FROM tag t WHERE name LIKE ANY(tags_array) INTO tags_id_arr;
+--
+--	INSERT INTO post_tag
+--	VALUES
+--	(p_id, unnest(tags_id_arr));
+END;'
+;
 ------------------------------------------------------------------------------------------------------------------------
 
 -- update post

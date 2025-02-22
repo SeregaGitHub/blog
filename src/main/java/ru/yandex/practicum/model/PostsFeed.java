@@ -16,11 +16,11 @@ public class PostsFeed {
     private String name;
     @NonNull
     private String imageUrl;
-    @NonNull
+    //@NonNull
     private String abbreviatedDescription;
     private int commentsCount;
     private int likesCount;
-    @NonNull
+    //@NonNull
     private String tags;
     //private List<String> tags;
 
