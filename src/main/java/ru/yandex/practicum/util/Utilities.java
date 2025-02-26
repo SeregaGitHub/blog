@@ -44,4 +44,12 @@ public class Utilities {
                 .tags(Arrays.stream(createPostDto.getTags().split(" ")).toList().toArray(new String[0]))
                 .build();
     }
+
+    public Integer setPageCount(String str) {
+        return switch (str) {
+            case "twenty" -> 20;
+            case "fifty" -> 50;
+            default -> 10;
+        };
+    }
 }

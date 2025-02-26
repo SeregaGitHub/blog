@@ -64,7 +64,25 @@ VALUES
 ('post_name-1', 'url-1', ARRAY['description-11', 'description-12', 'description-13'], 2),
 ('post_name-2', 'url-2', ARRAY['description-21', 'description-22', 'description-23'], 0),
 ('post_name-3', 'url-3', ARRAY['description-31', 'description-32', 'description-33'], 1),
-('post_name-4', 'url-4', ARRAY['description-41', 'description-42', 'description-43'], 0)
+('post_name-4', 'url-4', ARRAY['description-41', 'description-42', 'description-43'], 0),
+('post_name-5', 'url-11', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-6', 'url-12', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-7', 'url-13', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-8', 'url-14', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-9', 'url-15', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-10', 'url-16', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-11', 'url-17', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-12', 'url-18', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-13', 'url-19', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-14', 'url-21', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-15', 'url-22', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-16', 'url-23', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-17', 'url-24', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-18', 'url-25', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-19', 'url-26', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-20', 'url-27', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-21', 'url-28', ARRAY['description-11', 'description-12', 'description-13'], 0),
+('post_name-22', 'url-29', ARRAY['description-11', 'description-12', 'description-13'], 0)
 ON CONFLICT DO NOTHING;
 
 INSERT INTO tag (name)
@@ -125,33 +143,6 @@ BEGIN
 	INSERT INTO post_tag
 	VALUES
 	(p_id, unnest(tags_id_arr));
-END;'
-;
-
--- create new post
-CREATE OR REPLACE PROCEDURE create_new_post(IN post_name varchar, IN image_url varchar)--, IN description text[], IN tags_array varchar[])
-LANGUAGE plpgsql
-AS
-'
-DECLARE
-  p_id INT;
-  tags_id_arr int[];
-BEGIN
-  INSERT INTO post(name, image_url, description, commentsCount)
-	VALUES
-	(post_name, image_url, null, 0)
-	ON CONFLICT DO NOTHING
-	RETURNING id INTO p_id;
-
---	INSERT INTO tag(name)
---	VALUES (unnest(tags_array))
---	ON CONFLICT DO NOTHING;
---
---	SELECT ARRAY_AGG(t.id) FROM tag t WHERE name LIKE ANY(tags_array) INTO tags_id_arr;
---
---	INSERT INTO post_tag
---	VALUES
---	(p_id, unnest(tags_id_arr));
 END;'
 ;
 ------------------------------------------------------------------------------------------------------------------------
