@@ -31,7 +31,7 @@
 
     <tr th:each="postsFeed : ${feed}">
         <td th:text="${postsFeed.name}"></td>
-        <td th:text="${postsFeed.imageUrl}"></td>
+        <td> <img th:src="${postsFeed.imageUrl}" alt="Image not found" width="50px" height="50px"/> </td>
         <td th:text="${postsFeed.abbreviatedDescription}"></td>
         <td th:text="${postsFeed.likesCount}"></td>
         <td th:text="${postsFeed.commentsCount}"></td>

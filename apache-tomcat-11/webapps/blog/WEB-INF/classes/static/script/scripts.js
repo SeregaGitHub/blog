@@ -76,7 +76,7 @@ const postsCount = () => {
 
 
 
-
+// tags to <th>Tags</th>
 <body>
     <p id="output"></p>
 </body>

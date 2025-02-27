@@ -84,7 +84,7 @@ public class PostRepositoryImpl implements PostRepository {
     public List<PostsFeed> findAllPosts(Integer offset, Integer limit) {
         return jdbcTemplate.query(
                 """
-                        SELECT p.id, p.name, p.image_url, SUBSTRING(p.description[1], 1, 7) AS abbreviatedDescription,
+                        SELECT p.id, p.name, p.image_url, SUBSTRING(p.description[1], 1, 70) AS abbreviatedDescription,
                         p.commentsCount, COALESCE (l.count, 0) AS likesCount,
                         COALESCE (STRING_AGG(t.name, ' '), '') AS tags
                         FROM post p

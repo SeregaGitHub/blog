@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.model.PostsFeed;
 import ru.yandex.practicum.service.PostService;
-import ru.yandex.practicum.util.Utilities;
 
 import java.util.List;
 
