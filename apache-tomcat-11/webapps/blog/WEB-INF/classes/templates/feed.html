@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml"><head>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,148 +16,56 @@
 <h2>Filtering by tag...</h2>
 
 <article class="content">
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Image</th>
-        <th>Description</th>
-        <th>Likes Count</th>
-        <th>Comments Count</th>
-        <th>Tags</th>
-    </tr>
-    </thead>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Likes Count</th>
+            <th>Comments Count</th>
+            <th>Tags</th>
+        </tr>
+        </thead>
 
-    <tbody>
+        <tbody>
 
-    <tr th:each="postsFeed : ${feed.postsFeedList}">
-        <td th:text="${postsFeed.name}"></td>
-        <td> <img th:src="${postsFeed.imageUrl}" alt="Image not found" width="50px" height="50px"/> </td>
-        <td th:text="${postsFeed.abbreviatedDescription}"></td>
-        <td th:text="${postsFeed.likesCount}"></td>
-        <td th:text="${postsFeed.commentsCount}"></td>
-        <td th:text="${postsFeed.tags}"></td>
-        <!--<td>
-            <p th:each="tag: ${postsFeed.tags}"> <span th:text="${tag}"/>
-        </td>-->
-    </tr>
-    </tbody>
+        <tr th:each="postsFeed : ${feed.postsFeedList}">
+            <td th:text="${postsFeed.name}"></td>
+            <td><img th:src="${postsFeed.imageUrl}" alt="Image not found" width="50px" height="50px"/></td>
+            <td th:text="${postsFeed.abbreviatedDescription}"></td>
+            <td th:text="${postsFeed.likesCount}"></td>
+            <td th:text="${postsFeed.commentsCount}"></td>
+            <td th:text="${postsFeed.tags}"></td>
+            <!--<td>
+                <p th:each="tag: ${postsFeed.tags}"> <span th:text="${tag}"/>
+            </td>-->
+        </tr>
+        </tbody>
 
-</table>
+    </table>
 
-<!--    <div>
+
+    <div style="flex-direction: row; margin-bottom: 45px">
+        <a th:href="@{/feed(page=${feed.page}, size=${feed.size}, prev=prev, posts=${feed.postsCount})}"
+        ><button type="button">Prev</button></a>
+
+        <a th:href="@{/feed(page=${feed.page}, size=${feed.size}, next=next, posts=${feed.postsCount})}"
+        ><button type="button">Next</button></a>
+    </div>
+
+    <p style="margin-bottom: 2px">Posts count:</p>
+
+    <div style="flex-direction: row;">
         <form th:action="@{/feed}" style="flex-direction: row;">
             <button type="submit" th:name="size" th:value="10">10</button>
             <button type="submit" th:name="size" th:value="20">20</button>
             <button type="submit" th:name="size" th:value="50">50</button>
         </form>
-        <div style="flex-direction: row;">
-            <form th:action="@{/feed(page=${feed.page - feed.size}, size=${feed.size})}">
-                <button type="submit" th:name="page">Prev</button>
-            </form>
-            <form th:action="@{/feed(page=${feed.page + feed.size}, size=${feed.size})}">
-                <button type="submit" th:name="page">Next</button>
-            </form>
-        </div>
-    </div>-->
-
-    <div style="flex-direction: row;">
-        <a th:href="@{/feed(page=${feed.page}, size=${feed.size}, prev=${prev}, posts=${feed.postsCount})}"
-           th:text="Prev"
-        ></a>
-        <a th:href="@{/feed(page=${feed.page}, size=${feed.size}, next=${next}, posts=${feed.postsCount})}"
-           th:text="Next"
-        ></a>
     </div>
-
-
-    <form th:action="@{/feed}" style="flex-direction: row;">
-
-        <button type="submit" th:name="size" th:value="10">10</button>
-        <button type="submit" th:name="size" th:value="20">20</button>
-        <button type="submit" th:name="size" th:value="50">50</button>
-
-    </form>
-
-    <!--<form th:action="@{/feed}" style="flex-direction: row;">
-        <button type="submit" th:name="size" th:value="10">10</button>
-        <button type="submit" th:name="size" th:value="20">20</button>
-        <button type="submit" th:name="size" th:value="50">50</button>
-    </form>
-
-    <form th:action="@{/feed(page=${feed.page}, size=${feed.size}, prev=${prev}, posts=${feed.postsCount})}" style="flex-direction: row;">
-        <button type="submit">Prev</button>
-    </form>
-    <form th:action="@{/feed(page=${feed.page}, size=${feed.size}, next=${next}, posts=${feed.postsCount})}" style="flex-direction: row;">
-        <button type="submit">Next</button>
-    </form>-->
-
-    <!--<form th:action="@{/feed(page=${feed.page}, size=${feed.size}, posts=${feed.postsCount})}" style="flex-direction: row;">
-        <button type="submit" th:name="prev" th:value="prev">Prev</button>
-        <button type="submit" th:name="next" th:value="next">Next</button>
-    </form>-->
-
-    <div>
-        <p th:text="${feed.page}"></p>
-        <p th:text="${feed.size}"></p>
-        <p th:text="${feed.postsCount}"></p>
-    </div>
-
-    <!--<form th:action="@{/feed(page=${feed.page}, size=${feed.size}, posts=${feed.postCount})}" style="flex-direction: row;">
-        <button type="submit" th:name="prev" th:value="prev">Prev</button>
-        <button type="submit" th:name="size" th:value="ten">10</button>
-        <button type="submit" th:name="size" th:value="twenty">20</button>
-        <button type="submit" th:name="size" th:value="fifty">50</button>
-        <button type="submit" th:name="next" th:value="next">Next</button>
-    </form>-->
-
-    <!--<div
-        th:each="pageNumber : ${pageNumbers}"
-    >
-        <a style="flex-direction: row;"
-          th:href="@{/feed(from=${pageNumber}, size=${feed.size})}"
-          th:text=${pageNumber}
-        ></a>
-
-    </div>
-
-    <form th:action="@{/feed}" style="flex-direction: row;">
-        <button type="submit" th:name="count" th:value="10">10</button>
-        <button type="submit" th:name="count" th:value="20">20</button>
-        <button type="submit" th:name="count" th:value="50">50</button>
-    </form>-->
-
-<!--    <div>-->
-<!--        <button class="btn-add pag-value-20" value="20"-->
-<!--                th:action="@{/feed}" method="POST"-->
-<!--        >20</button>-->
-<!--    </div>-->
-
-<!--    <div -->
-<!--         th:if="${bookPage.totalPages > 0}" class="pagination"-->
-<!--         th:each="pageNumber : ${pageNumbers}">-->
-<!--        <a th:href="@{/feed(size=${bookPage.size}, page=${pageNumber})}"-->
-<!--           th:text=${pageNumber}-->
-<!--           th:class="${pageNumber==bookPage.number + 1} ? active"></a>-->
-<!--    </div>-->
-
-<!--    <div style="flex-direction: row;">
-        <button class="btn-add prev" value="10">Prev</button>
-        <button class="btn-add pag-value-10" value="10" onclick="setRowCount10()">10</button>
-        <button class="btn-add pag-value-20" value="20" onclick="setRowCount20()">20</button>
-        <button class="btn-add pag-value-50" value="50" onclick="setRowCount50()">50</button>
-        <button class="btn-add next" value="10">Next</button>
-    </div>-->
-
-<!--    <nav aria-label="Page navigation example">-->
-<!--        <ul class="pagination mt-4">-->
-<!--            <li th:class="${currentPage==status.index} ? 'active' : '' " class="page-item" th:each="page, status: ${pages}">-->
-<!--                <a th:href="@{/(page=${status.index}, keyWord=${keyWord})}" class="page-link" th:text="${status.index}"></a>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </nav>-->
 
 </article>
+
 
 <div class="form-container" style="display: none;" id="postForm">
     <h2>Create Post</h2>
@@ -174,7 +83,7 @@
                 cols="30"
                 rows="10"
                 required
-                ></textarea>
+        ></textarea>
 
         <label for="tags">Tags:</label>
         <input type="text" id="tags" name="tags" required>
