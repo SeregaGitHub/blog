@@ -5,9 +5,11 @@ import org.springframework.stereotype.Service;
 import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.model.PostsFeed;
 import ru.yandex.practicum.repository.PostRepositoryImpl;
+import ru.yandex.practicum.util.PageProperties;
 import ru.yandex.practicum.util.Utilities;
 
 import java.util.List;
+import java.util.Objects;
 
 @RequiredArgsConstructor
 @Service
@@ -50,5 +52,27 @@ public class PostServiceImpl implements PostService {
         }
 
         return repository.findAllPosts(from, pageSize);
+    }
+
+    @Override
+    public PageProperties findPosts(Integer page, Integer size, String prev, String next, Integer postsCount) {
+        int offset;
+
+        if (prev != null && page > 0) {
+            offset = page - size;
+        } else if (next != null && Objects.equals(postsCount, size)) {
+            offset = page + size;
+        } else {
+            offset = page;
+        }
+
+        List<PostsFeed> postsFeedList = repository.findAllPosts(offset, size);
+
+        return PageProperties.builder()
+                .page(offset)
+                .size(size)
+                .postsFeedList(postsFeedList)
+                .postsCount(postsFeedList.size())
+                .build();
     }
 }

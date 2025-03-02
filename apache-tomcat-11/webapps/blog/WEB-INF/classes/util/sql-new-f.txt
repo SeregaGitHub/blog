@@ -178,7 +178,8 @@ END;
 $$;
 
 BEGIN TRANSACTION ISOLATION LEVEL REPEATABLE READ;
-CALL create_new_post('post_name-002', 'url-002', ARRAY['description-51', 'description-52', 'description-53'],
+CALL create_new_post('Сэндвич', 'https://eda.ru/images/RecipePhoto/620x415/sjendvichi-na-grile-s-govjadinoj-vetchinoj-sirom_23925_photo_8409.webp',
+                     ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-52', 'description-53'],
 					 ARRAY['#potatos-001', '#potatos-002', '#mmm', '#rise', '#new']);
 COMMIT;
 
