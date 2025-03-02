@@ -62,11 +62,11 @@ CREATE INDEX idx_comment_post_id_post_comment ON comment(post_id, post_comment);
 INSERT INTO post (name, image_url, description, commentsCount)
 VALUES
 ('Суп харчо', 'https://eda.ru/images/RecipePhoto/620x415/sup-harcho-s-adzhikoy_137460_photo_152843.webp',
-ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-12', 'description-13'], 2),
+ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-12', 'description-13'], 0),
 ('Овсянка', 'https://eda.ru/images/RecipePhoto/620x415/ovsyanka-na-zavtrak-s-yablokom-izyumom-i-medom_187506_photo_195300.webp',
 ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-22', 'description-23'], 0),
 ('Пицца по-американски', 'https://eda.ru/images/RecipePhoto/620x415/picca-po-amerikanski_15040_photo_6999.webp',
-ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-32', 'description-33'], 1),
+ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-32', 'description-33'], 0),
 ('Лечо', 'https://eda.ru/images/RecipePhoto/620x415/lecho_28888_photo_44916.webp',
 ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-42', 'description-43'], 0),
 ('Суп с тефтелями', 'https://eda.ru/images/RecipePhoto/620x415/sup-s-tefteljami_34442_photo_21378.webp',
@@ -98,11 +98,11 @@ ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequ
 ('Тарталетки', 'https://eda.ru/images/RecipePhoto/620x415/tartaletki-s-vetchinno-sirnoj-zakuskoj_48029_photo_48909.webp',
 ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-12', 'description-13'], 0),
 ('Салат нисуаз', 'https://eda.ru/images/RecipePhoto/620x415/salat-nisuaz-s-rukkoloj_25267_photo_9508.webp',
-ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-12', 'description-13'], 0),
+ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-12', 'description-13'], 2),
 ('Сырники', 'https://eda.ru/images/RecipePhoto/620x415/sirniki-k-zavtraku_47166_photo_94332.webp',
 ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-12', 'description-13'], 0),
 ('Манты', 'https://eda.ru/images/RecipePhoto/620x415/buuzi-tradicionnoe-burjatskoe-bljudo_42067_photo_34970.webp',
-ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-12', 'description-13'], 0),
+ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-12', 'description-13'], 1),
 ('Блины', 'https://eda.ru/images/RecipePhoto/620x415/klassicheskie-bliny_140749_photo_158999.webp',
 ARRAY['Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad sequi quidem at nostrum quos.', 'description-12', 'description-13'], 0)
 ON CONFLICT DO NOTHING;
@@ -111,32 +111,32 @@ INSERT INTO tag (name)
 VALUES
 ('#meat'),
 ('#chees'),
-('#mmm'),
+('#milk'),
 ('#rise')
 ON CONFLICT DO NOTHING;
 
 INSERT INTO post_tag (post_id, tag_id)
 VALUES
-(1, 1),
-(3, 2),
-(2, 3),
-(1, 4),
-(4, 3),
-(1, 3)
+(19, 1),
+(21, 2),
+(20, 3),
+(19, 4),
+(22, 3),
+(19, 3)
 ON CONFLICT DO NOTHING;
 
 INSERT INTO likes (count, post_id)
 VALUES
-(1, 1),
-(5, 2),
-(4, 3)
+(1, 19),
+(5, 20),
+(4, 21)
 ON CONFLICT DO NOTHING;
 
 INSERT INTO comment (post_comment, post_id)
 VALUES
-('some-comment-11', 1),
-('some-comment-12', 1),
-('some-comment-31', 3)
+('some-comment-11', 19),
+('some-comment-12', 19),
+('some-comment-31', 21)
 ON CONFLICT DO NOTHING;
 
 ------------------------------------------------------------------------------------------------------------------------
