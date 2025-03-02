@@ -55,7 +55,7 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public PageProperties findPosts(Integer page, Integer size, String prev, String next, Integer postsCount) {
+    public PageProperties findPosts(Integer page, Integer size, String prev, String next, Integer postsCount, String keyword) {
         int offset;
 
         if (prev != null && page > 0) {
@@ -66,13 +66,20 @@ public class PostServiceImpl implements PostService {
             offset = page;
         }
 
-        List<PostsFeed> postsFeedList = repository.findAllPosts(offset, size);
+        List<PostsFeed> postsFeedList;
+        if (keyword == null || keyword.isEmpty()) {
+            keyword = null;
+            postsFeedList = repository.findAllPosts(offset, size);
+        } else {
+            postsFeedList = repository.filteringByTag("#".concat(keyword.toLowerCase()), offset, size);
+        }
 
         return PageProperties.builder()
                 .page(offset)
                 .size(size)
                 .postsFeedList(postsFeedList)
                 .postsCount(postsFeedList.size())
+                .keyword(keyword)
                 .build();
     }
 }

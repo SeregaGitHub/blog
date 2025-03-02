@@ -5,11 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.yandex.practicum.dto.CreatePostDto;
-import ru.yandex.practicum.model.PostsFeed;
 import ru.yandex.practicum.service.PostService;
 import ru.yandex.practicum.util.PageProperties;
-
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -24,12 +21,13 @@ public class PostsFeedController {
                                @RequestParam(value = "size", defaultValue = "10") Integer size,
                                @RequestParam(value = "prev", required = false) String prev,
                                @RequestParam(value = "next", required = false) String next,
-                               @RequestParam(value = "posts", required = false) Integer postsCount) {
+                               @RequestParam(value = "posts", required = false) Integer postsCount,
+                               @RequestParam(value = "keyword", required = false) String keyword) {
 
 
 
         //List<PostsFeed> postsFeedList = service.findPosts(page, size);
-        PageProperties pageProperties = service.findPosts(page, size, prev, next, postsCount);
+        PageProperties pageProperties = service.findPosts(page, size, prev, next, postsCount, keyword);
 
         model.addAttribute("feed", pageProperties);
 

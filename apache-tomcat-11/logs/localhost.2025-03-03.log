@@ -1,0 +1,427 @@
+03-Mar-2025 00:52:49.482 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 00:52:49.672 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 00:52:51.545 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 00:52:51.545 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 00:52:51.546 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@362fbd98')
+03-Mar-2025 00:54:52.925 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 00:54:52.935 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 00:54:52.935 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 00:55:03.121 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 00:55:03.291 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 00:55:05.047 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 00:55:05.047 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 00:55:05.048 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@7306836f')
+03-Mar-2025 00:55:16.934 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() для сервлета [dispatcher] в контексте с путем [/blog] выбросил исключение [Request processing failed: org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [SELECT p.id, p.name, p.image_url, SUBSTRING(p.description[1], 1, 70) AS abbreviatedDescription,
+p.commentsCount, COALESCE (l.count, 0) AS likesCount,
+COALESCE (STRING_AGG(t.name, ' '), '') AS tags
+FROM post p
+LEFT JOIN likes l ON l.post_id = p.id
+LEFT JOIN post_tag pt ON p.id = pt.post_id
+LEFT JOIN tag t ON t.id = pt.tag_id
+WHERE t.name LIKE ?
+GROUP BY p.id, l.count
+ORDER BY p.id DESC
+OFFSET ?
+LIMIT ?;
+]; Не указано значение для параметра 3.] с первопричиной
+	org.postgresql.util.PSQLException: Не указано значение для параметра 3.
+		at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:403)
+		at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
+		at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+		at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+		at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+		at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+		at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:732)
+		at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:723)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:754)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:767)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:825)
+		at ru.yandex.practicum.repository.PostRepositoryImpl.findAllPosts(PostRepositoryImpl.java:116)
+		at ru.yandex.practicum.service.PostServiceImpl.findPosts(PostServiceImpl.java:73)
+		at ru.yandex.practicum.controller.PostsFeedController.findAllPosts(PostsFeedController.java:30)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+		at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+		at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+		at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+		at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+		at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+		at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+		at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:619)
+		at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1746)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+03-Mar-2025 00:58:25.710 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() для сервлета [dispatcher] в контексте с путем [/blog] выбросил исключение [Request processing failed: org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [SELECT p.id, p.name, p.image_url, SUBSTRING(p.description[1], 1, 70) AS abbreviatedDescription,
+p.commentsCount, COALESCE (l.count, 0) AS likesCount,
+COALESCE (STRING_AGG(t.name, ' '), '') AS tags
+FROM post p
+LEFT JOIN likes l ON l.post_id = p.id
+LEFT JOIN post_tag pt ON p.id = pt.post_id
+LEFT JOIN tag t ON t.id = pt.tag_id
+WHERE t.name LIKE ?
+GROUP BY p.id, l.count
+ORDER BY p.id DESC
+OFFSET ?
+LIMIT ?;
+]; Не указано значение для параметра 3.] с первопричиной
+	org.postgresql.util.PSQLException: Не указано значение для параметра 3.
+		at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:403)
+		at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
+		at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+		at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+		at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+		at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+		at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:732)
+		at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:723)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:754)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:767)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:825)
+		at ru.yandex.practicum.repository.PostRepositoryImpl.findAllPosts(PostRepositoryImpl.java:116)
+		at ru.yandex.practicum.service.PostServiceImpl.findPosts(PostServiceImpl.java:73)
+		at ru.yandex.practicum.controller.PostsFeedController.findAllPosts(PostsFeedController.java:30)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+		at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+		at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+		at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+		at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+		at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+		at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+		at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:619)
+		at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1746)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+03-Mar-2025 01:02:10.805 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 01:02:10.813 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 01:02:10.813 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 01:02:20.180 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 01:02:20.365 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 01:02:22.201 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 01:02:22.201 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 01:02:22.202 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@361b2995')
+03-Mar-2025 01:02:28.610 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() для сервлета [dispatcher] в контексте с путем [/blog] выбросил исключение [Request processing failed: org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [SELECT p.id, p.name, p.image_url, SUBSTRING(p.description[1], 1, 70) AS abbreviatedDescription,
+p.commentsCount, COALESCE (l.count, 0) AS likesCount,
+COALESCE (STRING_AGG(t.name, ' '), '') AS tags
+FROM post p
+LEFT JOIN likes l ON l.post_id = p.id
+LEFT JOIN post_tag pt ON p.id = pt.post_id
+LEFT JOIN tag t ON t.id = pt.tag_id
+WHERE t.name LIKE ?
+GROUP BY p.id, l.count
+ORDER BY p.id DESC
+OFFSET ?
+LIMIT ?;
+]; Не указано значение для параметра 3.] с первопричиной
+	org.postgresql.util.PSQLException: Не указано значение для параметра 3.
+		at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:403)
+		at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
+		at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+		at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+		at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+		at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+		at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:732)
+		at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:723)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:754)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:767)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:825)
+		at ru.yandex.practicum.repository.PostRepositoryImpl.findAllPosts(PostRepositoryImpl.java:116)
+		at ru.yandex.practicum.service.PostServiceImpl.findPosts(PostServiceImpl.java:73)
+		at ru.yandex.practicum.controller.PostsFeedController.findAllPosts(PostsFeedController.java:30)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+		at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+		at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+		at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+		at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+		at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+		at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+		at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:619)
+		at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1746)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+03-Mar-2025 01:06:10.433 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 01:06:10.443 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 01:06:10.443 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 01:06:18.745 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 01:06:18.892 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 01:06:20.710 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 01:06:20.710 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 01:06:20.711 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@3299e315')
+03-Mar-2025 01:07:12.307 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() для сервлета [dispatcher] в контексте с путем [/blog] выбросил исключение [Request processing failed: org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [SELECT p.id, p.name, p.image_url, SUBSTRING(p.description[1], 1, 70) AS abbreviatedDescription,
+p.commentsCount, COALESCE (l.count, 0) AS likesCount,
+COALESCE (STRING_AGG(t.name, ' '), '') AS tags
+FROM post p
+LEFT JOIN likes l ON l.post_id = p.id
+LEFT JOIN post_tag pt ON p.id = pt.post_id
+LEFT JOIN tag t ON t.id = pt.tag_id
+WHERE t.name LIKE ?
+GROUP BY p.id, l.count
+ORDER BY p.id DESC
+OFFSET ?
+LIMIT ?;
+]; Не указано значение для параметра 3.] с первопричиной
+	org.postgresql.util.PSQLException: Не указано значение для параметра 3.
+		at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:403)
+		at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
+		at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+		at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+		at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+		at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+		at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:732)
+		at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:723)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:754)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:767)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:825)
+		at ru.yandex.practicum.repository.PostRepositoryImpl.filteringByTag(PostRepositoryImpl.java:116)
+		at ru.yandex.practicum.service.PostServiceImpl.findPosts(PostServiceImpl.java:73)
+		at ru.yandex.practicum.controller.PostsFeedController.findAllPosts(PostsFeedController.java:30)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+		at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+		at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+		at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+		at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+		at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+		at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+		at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:619)
+		at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1746)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+03-Mar-2025 01:10:02.989 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 01:10:03.000 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 01:10:03.000 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 01:10:12.786 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 01:10:12.944 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 01:10:14.745 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 01:10:14.745 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 01:10:14.746 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2db07651')
+03-Mar-2025 01:10:23.610 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() для сервлета [dispatcher] в контексте с путем [/blog] выбросил исключение [Request processing failed: org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [SELECT p.id, p.name, p.image_url, SUBSTRING(p.description[1], 1, 70) AS abbreviatedDescription,
+p.commentsCount, COALESCE (l.count, 0) AS likesCount,
+COALESCE (STRING_AGG(t.name, ' '), '') AS tags
+FROM post p
+LEFT JOIN likes l ON l.post_id = p.id
+LEFT JOIN post_tag pt ON p.id = pt.post_id
+LEFT JOIN tag t ON t.id = pt.tag_id
+WHERE t.name LIKE ?
+GROUP BY p.id, l.count
+ORDER BY p.id DESC
+OFFSET ?
+LIMIT ?;
+]] с первопричиной
+	org.postgresql.util.PSQLException: ОШИБКА: оператор не существует: character varying ~~ integer
+  Подсказка: Оператор с данными именем и типами аргументов не найден. Возможно, вам следует добавить явные приведения типов.
+  Позиция: 340
+		at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+		at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+		at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+		at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+		at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+		at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+		at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+		at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:732)
+		at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:723)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:754)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:767)
+		at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:825)
+		at ru.yandex.practicum.repository.PostRepositoryImpl.filteringByTag(PostRepositoryImpl.java:116)
+		at ru.yandex.practicum.service.PostServiceImpl.findPosts(PostServiceImpl.java:73)
+		at ru.yandex.practicum.controller.PostsFeedController.findAllPosts(PostsFeedController.java:30)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+		at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+		at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+		at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+		at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+		at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+		at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+		at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+		at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:619)
+		at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1746)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+03-Mar-2025 01:11:40.883 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 01:11:40.892 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 01:11:40.893 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 01:11:49.436 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 01:11:49.621 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 01:11:51.397 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 01:11:51.398 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 01:11:51.399 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@11e36e5c')
+03-Mar-2025 01:14:38.843 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 01:14:38.852 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 01:14:38.852 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 01:14:50.404 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 01:14:50.568 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 01:14:52.630 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 01:14:52.630 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 01:14:52.633 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@36b86248')
+03-Mar-2025 01:22:19.486 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 01:22:19.496 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 01:22:19.496 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 01:22:29.080 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 01:22:29.251 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 01:22:31.091 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 01:22:31.091 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 01:22:31.092 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@79e591bb')
+03-Mar-2025 01:41:21.651 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 01:41:21.661 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 01:41:21.661 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 01:41:54.939 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 01:41:55.082 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 01:41:57.049 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 01:41:57.049 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 01:41:57.050 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@11e36e5c')
+03-Mar-2025 01:52:12.620 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 01:52:12.628 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 01:52:12.628 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 01:52:21.528 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 01:52:21.680 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 01:52:23.368 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 01:52:23.369 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 01:52:23.372 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@6dc98c02')
+03-Mar-2025 01:54:21.397 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 01:54:21.406 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 01:54:21.406 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 01:54:50.285 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 01:54:50.451 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 01:54:52.108 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 01:54:52.108 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 01:54:52.109 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@11e36e5c')
+03-Mar-2025 02:05:16.245 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 02:05:16.253 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 02:05:16.253 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 02:05:33.040 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 02:05:33.209 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 02:05:34.964 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 02:05:34.964 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 02:05:34.966 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2456716b')
+03-Mar-2025 02:16:45.476 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 02:16:45.485 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 02:16:45.485 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+03-Mar-2025 02:16:54.904 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+03-Mar-2025 02:16:55.060 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+03-Mar-2025 02:16:56.808 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+03-Mar-2025 02:16:56.809 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+03-Mar-2025 02:16:56.810 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@7306836f')
+03-Mar-2025 02:26:43.994 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+03-Mar-2025 02:26:44.005 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+03-Mar-2025 02:26:44.006 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

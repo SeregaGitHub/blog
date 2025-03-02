@@ -110,4 +110,39 @@ public class PostRepositoryImpl implements PostRepository {
                         .build(),
                 offset, limit);
     }
+
+    @Override
+    public List<PostsFeed> filteringByTag(String keyword, Integer offset, Integer limit) {
+        return jdbcTemplate.query(
+                """
+                        SELECT p.id, p.name, p.image_url, SUBSTRING(p.description[1], 1, 70) AS abbreviatedDescription,
+                        p.commentsCount, COALESCE (l.count, 0) AS likesCount,
+                        COALESCE (STRING_AGG(t.name, ' '), '') AS tags
+                        FROM post p
+                        LEFT JOIN likes l ON l.post_id = p.id
+                        LEFT JOIN post_tag pt ON p.id = pt.post_id
+                        LEFT JOIN tag t ON t.id = pt.tag_id
+                        WHERE p.id IN (SELECT pt.post_id
+                        			   FROM post_tag pt
+                        			   JOIN tag t ON pt.tag_id = t.id
+                        			   WHERE t.name = ?)
+                        GROUP BY p.id, l.count
+                        ORDER BY p.id DESC
+                        OFFSET ?
+                        LIMIT ?;
+                        """,
+                (rs, rowNum) -> PostsFeed.builder()
+                        .id(rs.getInt("id"))
+                        .name(rs.getString("name"))
+                        .imageUrl(rs.getString("image_url"))
+                        //.abbreviatedDescription(rs.getArray())
+                        .abbreviatedDescription(rs.getString("abbreviatedDescription"))
+                        .commentsCount(rs.getInt("commentsCount"))
+                        .likesCount(rs.getInt("likesCount"))
+                        //.tags(Utilities.arrayToList(rs.getArray("tags")))
+                        //.tags(List.of(rs.getString("tags").split(" ")))
+                        .tags(rs.getString("tags"))
+                        .build(),
+                keyword, offset, limit);
+    }
 }

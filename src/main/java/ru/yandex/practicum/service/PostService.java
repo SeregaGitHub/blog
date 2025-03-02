@@ -14,5 +14,5 @@ public interface PostService {
     //List<PostsFeed> findPosts(Integer from, Integer pageSize);
     List<PostsFeed> findPosts(String size, String prev, String next);
 
-    PageProperties findPosts(Integer page, Integer size, String prev, String next, Integer postsCount);
+    PageProperties findPosts(Integer page, Integer size, String prev, String next, Integer postsCount, String keyword);
 }

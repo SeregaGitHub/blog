@@ -15,6 +15,13 @@
 
 <h2>Filtering by tag...</h2>
 
+<form th:action="@{/feed}" method="get" th:switch="${feed.keyword}">
+<!--    <input th:case="''" name="keyword" placeholder="Enter the keyword..." type="search">-->
+    <input th:case="null" name="keyword" placeholder="Enter the keyword..." type="search">
+    <input th:case="*" name="keyword" th:value="${feed.keyword}" type="search">
+    <button type="submit" th:name="size" th:value="${feed.size}">Поиск</button>
+</form>
+
 <article class="content">
     <table>
         <thead>
@@ -47,11 +54,16 @@
 
 
     <div style="flex-direction: row; margin-bottom: 45px">
-        <a th:href="@{/feed(page=${feed.page}, size=${feed.size}, prev=prev, posts=${feed.postsCount})}"
+        <a th:if="${feed.keyword == null}" th:href="@{/feed(page=${feed.page}, size=${feed.size}, prev=prev, posts=${feed.postsCount})}"
         ><button type="button">Prev</button></a>
-
-        <a th:href="@{/feed(page=${feed.page}, size=${feed.size}, next=next, posts=${feed.postsCount})}"
+        <a th:if="${feed.keyword == null}" th:href="@{/feed(page=${feed.page}, size=${feed.size}, next=next, posts=${feed.postsCount})}"
         ><button type="button">Next</button></a>
+
+        <a th:unless="${feed.keyword == null}" th:href="@{/feed(page=${feed.page}, size=${feed.size}, prev=prev, posts=${feed.postsCount}, keyword=${feed.keyword})}"
+        ><button type="button">Prev</button></a>
+        <a th:unless="${feed.keyword == null}" th:href="@{/feed(page=${feed.page}, size=${feed.size}, next=next, posts=${feed.postsCount}, keyword=${feed.keyword})}"
+        ><button type="button">Next</button></a>
+
     </div>
 
     <p style="margin-bottom: 2px">Posts count:</p>

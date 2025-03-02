@@ -14,5 +14,7 @@ public interface PostRepository {
 
     List<PostsFeed> findAllPosts(Integer offset, Integer limit);
 
+    List<PostsFeed> filteringByTag(String keyword, Integer offset, Integer limit);
+
     //List<PostFeedDto> findAllPosts();
 }

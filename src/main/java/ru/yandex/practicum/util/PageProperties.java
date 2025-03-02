@@ -18,6 +18,7 @@ public class PageProperties {
     List<PostsFeed> postsFeedList;
     //@NonNull
     int postsCount;
+    String keyword;
 //    @NonNull
 //    boolean hasNext;
 }
