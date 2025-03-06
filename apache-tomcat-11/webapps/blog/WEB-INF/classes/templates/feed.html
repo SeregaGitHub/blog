@@ -38,7 +38,8 @@
         <tbody>
 
         <tr th:each="postsFeed : ${feed.postsFeedList}">
-            <td th:text="${postsFeed.name}"></td>
+            <td> <a th:href="@{/feed/{id} (id=${postsFeed.id})}"> <p th:text="${postsFeed.name}"></p> </a> </td>
+<!--            <td th:text="${postsFeed.name}"></td>-->
             <td><img th:src="${postsFeed.imageUrl}" alt="Image not found" width="50px" height="50px"/></td>
             <td th:text="${postsFeed.abbreviatedDescription}"></td>
             <td th:text="${postsFeed.likesCount}"></td>

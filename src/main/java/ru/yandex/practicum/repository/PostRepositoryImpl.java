@@ -5,12 +5,16 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.stereotype.Repository;
 import ru.yandex.practicum.dto.PostDto;
+import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
 
 import java.sql.Array;
 import java.sql.CallableStatement;
 import java.sql.Types;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Repository
@@ -144,5 +148,37 @@ public class PostRepositoryImpl implements PostRepository {
                         .tags(rs.getString("tags"))
                         .build(),
                 keyword, offset, limit);
+    }
+
+    @Override
+    public Optional<Post> findPost(Integer id) {
+        List<Post> list = jdbcTemplate.query(
+                """
+                        SELECT p.id, p.name, p.image_url, p.description,
+                        		COALESCE (STRING_AGG(DISTINCT t.name, ' '), '') AS tags,
+                        		COALESCE (l.count, 0) AS likesCount,
+                        		CASE
+                            		WHEN length((ARRAY_AGG(c.post_comment))[1]) > 0 THEN (ARRAY_AGG(DISTINCT c.post_comment))
+                            		ELSE ARRAY['']
+                        		END AS comments
+                        FROM post p
+                        LEFT JOIN comment c ON c.post_id = p.id
+                        LEFT JOIN likes l ON l.post_id = p.id
+                        LEFT JOIN post_tag pt ON p.id = pt.post_id
+                        LEFT JOIN tag t ON t.id = pt.tag_id
+                        WHERE p.id = ?
+                        GROUP BY p.id, l.count;
+                        """,
+                (rs, rowNum) -> Post.builder()
+                        .id(rs.getInt("id"))
+                        .name(rs.getString("name"))
+                        .imageUrl(rs.getString("image_url"))
+                        .description(Arrays.stream((String[]) rs.getArray("description").getArray()).toList())
+                        .tags(List.of(rs.getString("tags").split(" ")))
+                        .likes(rs.getInt("likesCount"))
+                        .comments(Arrays.stream((String[]) rs.getArray("comments").getArray()).toList())
+                        .build(), id);
+
+        return list.size() == 1 ? Optional.of(list.getFirst()) : Optional.empty();
     }
 }

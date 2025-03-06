@@ -22,7 +22,8 @@ public class Post {
     @NonNull
     private List<String> tags;
     @NonNull
-    private List<Comment> comments;
+    //private List<Comment> comments;
+    private List<String> comments;
     private int likes;
 
     @Override

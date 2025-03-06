@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.yandex.practicum.dto.CreatePostDto;
+import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.service.PostService;
 import ru.yandex.practicum.util.PageProperties;
 
@@ -33,6 +34,13 @@ public class PostsFeedController {
 
 
         return "feed";
+    }
+
+    @GetMapping(value = "/{id}")
+    public String findPost(Model model, @PathVariable(name = "id") Integer id) {
+        Post post = service.findPost(id);
+        model.addAttribute("post", post);
+        return "post";
     }
 
     @PostMapping

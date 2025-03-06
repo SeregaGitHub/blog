@@ -1,9 +1,11 @@
 package ru.yandex.practicum.repository;
 
 import ru.yandex.practicum.dto.PostDto;
+import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface PostRepository {
     Integer findPostsCount();
@@ -15,6 +17,8 @@ public interface PostRepository {
     List<PostsFeed> findAllPosts(Integer offset, Integer limit);
 
     List<PostsFeed> filteringByTag(String keyword, Integer offset, Integer limit);
+
+    Optional<Post> findPost(Integer id);
 
     //List<PostFeedDto> findAllPosts();
 }
