@@ -1,6 +1,7 @@
 package ru.yandex.practicum.model;
 
 import lombok.*;
+import ru.yandex.practicum.dto.CommentDto;
 
 import java.util.List;
 import java.util.Objects;
@@ -23,7 +24,8 @@ public class Post {
     private List<String> tags;
     @NonNull
     //private List<Comment> comments;
-    private List<String> comments;
+    //private List<String> comments;
+    private List<CommentDto> comments;
     private int likes;
 
     @Override

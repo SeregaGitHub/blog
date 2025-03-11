@@ -5,8 +5,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.stereotype.Repository;
 import ru.yandex.practicum.dto.PostDto;
+import ru.yandex.practicum.model.Comment;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
+import ru.yandex.practicum.util.Utilities;
 
 import java.sql.Array;
 import java.sql.CallableStatement;
@@ -157,10 +159,7 @@ public class PostRepositoryImpl implements PostRepository {
                         SELECT p.id, p.name, p.image_url, p.description,
                         		COALESCE (STRING_AGG(DISTINCT t.name, ' '), '') AS tags,
                         		COALESCE (l.count, 0) AS likesCount,
-                        		CASE
-                            		WHEN length((ARRAY_AGG(c.post_comment))[1]) > 0 THEN (ARRAY_AGG(DISTINCT c.post_comment))
-                            		ELSE ARRAY['']
-                        		END AS comments
+                        		ARRAY_AGG(DISTINCT c.*) AS comments
                         FROM post p
                         LEFT JOIN comment c ON c.post_id = p.id
                         LEFT JOIN likes l ON l.post_id = p.id
@@ -176,7 +175,9 @@ public class PostRepositoryImpl implements PostRepository {
                         .description(Arrays.stream((String[]) rs.getArray("description").getArray()).toList())
                         .tags(List.of(rs.getString("tags").split(" ")))
                         .likes(rs.getInt("likesCount"))
-                        .comments(Arrays.stream((String[]) rs.getArray("comments").getArray()).toList())
+                        //.comments(Utilities.arrayToList(rs.getArray("comments")))
+                        .comments(Utilities.arrayToList(rs.getArray("comments")))
+                        //.comments(Arrays.stream((Object[]) rs.getArray("comments").getArray()).toList())
                         .build(), id);
 
         return list.size() == 1 ? Optional.of(list.getFirst()) : Optional.empty();

@@ -1,6 +1,7 @@
 package ru.yandex.practicum.util;
 
 import lombok.experimental.UtilityClass;
+import ru.yandex.practicum.dto.CommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.dto.PostDto;
 
@@ -17,19 +18,56 @@ public class Utilities {
         return String.join(" ", list);
     }*/
 
-    public List<String> arrayToList(Array a) {
-        List<String> tags = new ArrayList<>();
+    public List<CommentDto> arrayToList(Array a) {
+        List<CommentDto> commentDtoList = new ArrayList<>();
+        // List<String> comments = new ArrayList<>();
 
-        Object[] tagsArray = null;
+        Object[] commentsArray = null;
         try {
-            tagsArray = (Object[]) a.getArray();
+            if (a != null) {
+                commentsArray = (Object[]) a.getArray();
+            } else {
+                return commentDtoList;
+            }
         } catch (SQLException e) {
-            return tags;
+            return commentDtoList;
         }
 
-        return Arrays.stream(tagsArray)
+        List<String> comments = Arrays.stream(commentsArray)
                 .map(Object::toString)
                 .collect(Collectors.toList());
+
+        toComments(comments, commentDtoList);
+        return commentDtoList;
+        /*return Arrays.stream(commentsArray)
+                .map(Object::toString)
+                .collect(Collectors.toList());*/
+    }
+
+    private void toComments(List<String> list, List<CommentDto> commentDtoList) {
+        for (String s : list) {
+            int[] indexes = new int[2];
+
+            for (int i = 0; i < s.length(); i++) {
+                if (s.charAt(i) == ',') {
+                    indexes[0] = i;
+                    break;
+                }
+            }
+
+            for (int i = s.length() - 1; i >= 0; i--) {
+                if (s.charAt(i) == ',') {
+                    indexes[1] = i;
+                    break;
+                }
+            }
+
+            commentDtoList.add(
+                    CommentDto.builder()
+                            .id(Integer.parseInt(s.substring(1, indexes[0])))
+                            .postComment(s.substring(indexes[0] + 1, indexes[1]))
+                            .build());
+        }
     }
 
     public PostDto toPostDto(CreatePostDto createPostDto) {

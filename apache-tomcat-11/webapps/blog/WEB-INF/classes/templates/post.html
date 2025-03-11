@@ -34,17 +34,6 @@
     </div>
 
     <div style="display: flex; align-items: center; justify-content: center;">
-        <p style="font-size: 900;">Description: </p>
-    </div>
-    <div style="display: flex; align-items: center; justify-content: center;">
-        <div class="post-border">
-            <tr th:each="d : *{description}">
-                <td><p th:text="${d}"></p></td>
-            </tr>
-        </div>
-    </div>
-
-    <div style="display: flex; align-items: center; justify-content: center;">
         <p style="font-size: 900;">Tags: </p>
     </div>
     <div style="display: flex; align-items: center; justify-content: center;">
@@ -56,14 +45,27 @@
     </div>
 
     <div style="display: flex; align-items: center; justify-content: center;">
+        <p style="font-size: 900;">Description: </p>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div class="post-border">
+            <tr th:each="d : *{description}">
+                <td><p th:text="${d}"></p></td>
+            </tr>
+        </div>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <button style="margin: 10px;">ADD COMMENT</button>
         <p style="font-size: 900;">Comments: </p>
     </div>
     <div style="display: flex; align-items: center; justify-content: center;">
         <div class="post-border">
             <tr th:each="c : *{comments}">
-                <td><p th:text="${c}"></p>
-                    <hr/>
+                <td><p th:text="${c.postComment}"></p>
+                    <button style="margin: 10px;">DELETE</button>
                 </td>
+                <hr/>
             </tr>
         </div>
     </div>
