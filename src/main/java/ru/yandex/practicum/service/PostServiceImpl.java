@@ -2,6 +2,7 @@ package ru.yandex.practicum.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
@@ -91,5 +92,11 @@ public class PostServiceImpl implements PostService {
         return optional.orElseThrow(
                 () -> new RuntimeException("This post is not exist")
         );
+    }
+
+    @Override
+    public void saveComment(CreateCommentDto createCommentDto, Integer post_id) {
+        createCommentDto.setPostId(post_id);
+        repository.saveComment(createCommentDto);
     }
 }

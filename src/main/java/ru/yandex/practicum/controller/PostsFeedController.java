@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.service.PostService;
@@ -47,5 +48,11 @@ public class PostsFeedController {
     public String save(@ModelAttribute CreatePostDto createPostDto) {
         service.save(createPostDto);
         return "redirect:/feed";
+    }
+
+    @PostMapping(value = "/comment/post/{post_id}")
+    public String saveComment(@ModelAttribute CreateCommentDto createCommentDto, @PathVariable(name = "post_id") Integer post_id) {
+        service.saveComment(createCommentDto, post_id);
+        return "redirect:/feed/" + post_id;
     }
 }

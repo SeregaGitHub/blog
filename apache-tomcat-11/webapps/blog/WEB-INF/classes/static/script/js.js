@@ -3,7 +3,10 @@ function toggleForm() {
         form.style.display = form.style.display === 'none' ? 'block' : 'none';
     }
 
-
+function toggleCommentForm() {
+        const form = document.getElementById('commentForm');
+        form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
 
 
 

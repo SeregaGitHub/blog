@@ -1,5 +1,6 @@
 package ru.yandex.practicum.repository;
 
+import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.PostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
@@ -19,6 +20,8 @@ public interface PostRepository {
     List<PostsFeed> filteringByTag(String keyword, Integer offset, Integer limit);
 
     Optional<Post> findPost(Integer id);
+
+    void saveComment(CreateCommentDto createCommentDto);
 
     //List<PostFeedDto> findAllPosts();
 }

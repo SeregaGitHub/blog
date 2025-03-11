@@ -56,8 +56,30 @@
     </div>
 
     <div style="display: flex; align-items: center; justify-content: center;">
-        <button style="margin: 10px;">ADD COMMENT</button>
-        <p style="font-size: 900;">Comments: </p>
+        <div style="height: 100%">
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <button style="margin: 10px;"  onclick="toggleCommentForm()">ADD COMMENT</button>
+                <p style="font-size: 900;">Comments: </p>
+            </div>
+
+            <div style="display: none;" id="commentForm">
+                <form th:action="@{/feed/comment/post/{post_id}(post_id=*{id})}" method="POST">
+
+                    <label for="commentText">Comment text:</label>
+                    <textarea
+                            id="commentText"
+                            name="commentText"
+                            cols="70"
+                            rows="10"
+                            required
+                    ></textarea>
+
+                    <button type="submit">Create comment</button>
+                </form>
+            </div>
+        </div>
+
+
     </div>
     <div style="display: flex; align-items: center; justify-content: center;">
         <div class="post-border">
@@ -70,6 +92,8 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" th:src="@{/static/script/js.js}"></script>
 
 </body>
 </html>

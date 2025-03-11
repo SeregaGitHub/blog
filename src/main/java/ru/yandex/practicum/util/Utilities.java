@@ -1,5 +1,6 @@
 package ru.yandex.practicum.util;
 
+import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 import ru.yandex.practicum.dto.CommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
@@ -18,33 +19,22 @@ public class Utilities {
         return String.join(" ", list);
     }*/
 
+    @SneakyThrows
     public List<CommentDto> arrayToList(Array a) {
-        List<CommentDto> commentDtoList = new ArrayList<>();
-        // List<String> comments = new ArrayList<>();
+        //List<CommentDto> commentDtoList = new ArrayList<>();
 
-        Object[] commentsArray = null;
-        try {
-            if (a != null) {
-                commentsArray = (Object[]) a.getArray();
-            } else {
-                return commentDtoList;
-            }
-        } catch (SQLException e) {
-            return commentDtoList;
-        }
-
-        List<String> comments = Arrays.stream(commentsArray)
+        List<String> comments = Arrays.stream((Object[]) a.getArray())
                 .map(Object::toString)
                 .collect(Collectors.toList());
 
-        toComments(comments, commentDtoList);
-        return commentDtoList;
-        /*return Arrays.stream(commentsArray)
-                .map(Object::toString)
-                .collect(Collectors.toList());*/
+        /*, commentDtoList*/
+        return toComments(comments/*, commentDtoList*/);
     }
 
-    private void toComments(List<String> list, List<CommentDto> commentDtoList) {
+    private List<CommentDto> toComments(List<String> list/*, List<CommentDto> commentDtoList*/) {
+        // Не хотел получать комментарии отдельным запросом. Другого способа не придумал
+
+        List<CommentDto> commentDtoList = new ArrayList<>();
         for (String s : list) {
             int[] indexes = new int[2];
 
@@ -68,6 +58,7 @@ public class Utilities {
                             .postComment(s.substring(indexes[0] + 1, indexes[1]))
                             .build());
         }
+        return commentDtoList;
     }
 
     public PostDto toPostDto(CreatePostDto createPostDto) {

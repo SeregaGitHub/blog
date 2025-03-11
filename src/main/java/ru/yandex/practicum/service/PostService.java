@@ -1,5 +1,6 @@
 package ru.yandex.practicum.service;
 
+import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
@@ -19,4 +20,6 @@ public interface PostService {
 
 
     Post findPost(Integer id);
+
+    void saveComment(CreateCommentDto createCommentDto, Integer post_id);
 }

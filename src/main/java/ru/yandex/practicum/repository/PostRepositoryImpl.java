@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.stereotype.Repository;
+import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.PostDto;
 import ru.yandex.practicum.model.Comment;
 import ru.yandex.practicum.model.Post;
@@ -159,7 +160,10 @@ public class PostRepositoryImpl implements PostRepository {
                         SELECT p.id, p.name, p.image_url, p.description,
                         		COALESCE (STRING_AGG(DISTINCT t.name, ' '), '') AS tags,
                         		COALESCE (l.count, 0) AS likesCount,
-                        		ARRAY_AGG(DISTINCT c.*) AS comments
+                        		CASE
+                              		WHEN (ARRAY_AGG(DISTINCT c.*)) <> '{NULL}' THEN (ARRAY_AGG(DISTINCT c.* ORDER BY c.* DESC))
+                              		ELSE ARRAY[]::comment[]
+                          		END AS comments
                         FROM post p
                         LEFT JOIN comment c ON c.post_id = p.id
                         LEFT JOIN likes l ON l.post_id = p.id
@@ -181,5 +185,17 @@ public class PostRepositoryImpl implements PostRepository {
                         .build(), id);
 
         return list.size() == 1 ? Optional.of(list.getFirst()) : Optional.empty();
+    }
+
+    @Override
+    public void saveComment(CreateCommentDto createCommentDto) {
+        jdbcTemplate.update(
+                """
+                        INSERT INTO comment(post_comment, post_id)
+                        VALUES
+                        (?, ?);
+                        """,
+                createCommentDto.getCommentText(), createCommentDto.getPostId()
+        );
     }
 }
