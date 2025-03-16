@@ -99,4 +99,9 @@ public class PostServiceImpl implements PostService {
         createCommentDto.setPostId(post_id);
         repository.saveComment(createCommentDto);
     }
+
+    @Override
+    public void addLike(Integer postId) {
+        repository.addLike(postId);
+    }
 }

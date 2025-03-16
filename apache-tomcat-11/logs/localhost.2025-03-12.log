@@ -199,3 +199,6 @@ VALUES
 12-Mar-2025 10:48:36.977 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
 12-Mar-2025 10:48:36.977 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
 12-Mar-2025 10:48:36.978 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@179e8859')
+12-Mar-2025 12:21:38.439 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+12-Mar-2025 12:21:38.447 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+12-Mar-2025 12:21:38.448 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

@@ -27,12 +27,6 @@
         <button style="margin: 10px;">DELETE</button>
     </div>
 
-    <div style="display: flex; justify-content: center; margin-top: 10px;">
-        <button style="margin: 10px;">ADD LIKE</button>
-        <p>Likes count: </p>
-        <p th:text="*{likes}"></p>
-    </div>
-
     <div style="display: flex; align-items: center; justify-content: center;">
         <p style="font-size: 900;">Tags: </p>
     </div>
@@ -42,6 +36,16 @@
                 <td th:text="${t}"></td>
             </tr>
         </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; margin-top: 10px;">
+        <form th:action="@{/feed/likes/post/{post_id}(post_id=*{id})}" method="POST" style="width: 200px;">
+            <button type="submit" style="margin: 10px;">ADD LIKE</button>
+            <div style="display: flex;">
+                <p style="flex: 1">Likes count: </p>
+                <p style="flex: 1" th:text="*{likes}"></p>
+            </div>
+        </form>
     </div>
 
     <div style="display: flex; align-items: center; justify-content: center;">
@@ -84,7 +88,7 @@
     <div style="display: flex; align-items: center; justify-content: center;">
         <div class="post-border">
             <tr th:each="c : *{comments}">
-                <td><p th:text="${c.postComment}"></p>
+                <td><p th:text="${c.postComment}" style="background-color: #DCDCDC;"></p>
                     <button style="margin: 10px;">DELETE</button>
                 </td>
                 <hr/>

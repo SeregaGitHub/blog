@@ -23,5 +23,7 @@ public interface PostRepository {
 
     void saveComment(CreateCommentDto createCommentDto);
 
+    void addLike(Integer postId);
+
     //List<PostFeedDto> findAllPosts();
 }

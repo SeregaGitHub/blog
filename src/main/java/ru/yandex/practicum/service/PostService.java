@@ -22,4 +22,6 @@ public interface PostService {
     Post findPost(Integer id);
 
     void saveComment(CreateCommentDto createCommentDto, Integer post_id);
+
+    void addLike(Integer postId);
 }

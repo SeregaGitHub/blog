@@ -6,7 +6,6 @@ import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.stereotype.Repository;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.PostDto;
-import ru.yandex.practicum.model.Comment;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
 import ru.yandex.practicum.util.Utilities;
@@ -17,7 +16,6 @@ import java.sql.Types;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Repository
@@ -196,6 +194,21 @@ public class PostRepositoryImpl implements PostRepository {
                         (?, ?);
                         """,
                 createCommentDto.getCommentText(), createCommentDto.getPostId()
+        );
+    }
+
+    @Override
+    public void addLike(Integer postId) {
+        jdbcTemplate.update(
+                """
+                        INSERT INTO likes (count, post_id)
+                        VALUES
+                        (1, ?)
+                        ON CONFLICT (post_id) DO UPDATE
+                        SET count = likes.count + 1
+                        WHERE likes.post_id = ?;
+                        """,
+                postId, postId
         );
     }
 }

@@ -55,4 +55,10 @@ public class PostsFeedController {
         service.saveComment(createCommentDto, post_id);
         return "redirect:/feed/" + post_id;
     }
+
+    @PostMapping(value = "/likes/post/{post_id}")
+    public String addLike(@PathVariable(name = "post_id") Integer post_id) {
+        service.addLike(post_id);
+        return "redirect:/feed/" + post_id;
+    }
 }
