@@ -26,14 +26,8 @@ public class PostsFeedController {
                                @RequestParam(value = "posts", required = false) Integer postsCount,
                                @RequestParam(value = "keyword", required = false) String keyword) {
 
-
-
-        //List<PostsFeed> postsFeedList = service.findPosts(page, size);
         PageProperties pageProperties = service.findPosts(page, size, prev, next, postsCount, keyword);
-
         model.addAttribute("feed", pageProperties);
-
-
         return "feed";
     }
 
@@ -51,7 +45,8 @@ public class PostsFeedController {
     }
 
     @PostMapping(value = "/comment/post/{post_id}")
-    public String saveComment(@ModelAttribute CreateCommentDto createCommentDto, @PathVariable(name = "post_id") Integer post_id) {
+    public String saveComment(@ModelAttribute CreateCommentDto createCommentDto,
+                              @PathVariable(name = "post_id") Integer post_id) {
         service.saveComment(createCommentDto, post_id);
         return "redirect:/feed/" + post_id;
     }
@@ -68,5 +63,10 @@ public class PostsFeedController {
         service.deleteComment(commentId, postId);
         return "redirect:/feed/" + postId;
     }
-    // http://localhost:8080/blog/feed/comment/delete/2/post/19
+
+    @PostMapping(value = "/delete/{post_id}", params = "_method=delete")
+    public String delete(@PathVariable(name = "post_id") Integer postId) {
+        service.deletePost(postId);
+        return "redirect:/feed";
+    }
 }

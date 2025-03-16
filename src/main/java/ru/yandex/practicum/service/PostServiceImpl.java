@@ -109,4 +109,9 @@ public class PostServiceImpl implements PostService {
     public void deleteComment(Integer commentId, Integer postId) {
         repository.deleteComment(commentId, postId);
     }
+
+    @Override
+    public void deletePost(Integer postId) {
+        repository.deletePost(postId);
+    }
 }

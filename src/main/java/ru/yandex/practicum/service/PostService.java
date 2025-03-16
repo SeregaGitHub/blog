@@ -26,4 +26,6 @@ public interface PostService {
     void addLike(Integer postId);
 
     void deleteComment(Integer commentId, Integer postId);
+
+    void deletePost(Integer postId);
 }

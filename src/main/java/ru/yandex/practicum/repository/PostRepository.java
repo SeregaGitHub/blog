@@ -27,5 +27,7 @@ public interface PostRepository {
 
     void deleteComment(Integer commentId, Integer postId);
 
+    void deletePost(Integer postId);
+
     //List<PostFeedDto> findAllPosts();
 }

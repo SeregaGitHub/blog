@@ -24,7 +24,11 @@
 
     <div style="display: flex; justify-content: center; margin-top: 10px;">
         <button style="margin: 10px;">UPDATE</button>
-        <button style="margin: 10px;">DELETE</button>
+
+        <form th:action="@{/feed/delete/{post_id}(post_id=*{id})}" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button style="margin: 10px;" type="submit">DELETE</button>
+        </form>
     </div>
 
     <div style="display: flex; align-items: center; justify-content: center;">
@@ -89,7 +93,6 @@
         <div class="post-border">
             <tr th:each="c : *{comments}">
                 <td><p th:text="${c.postComment}" style="background-color: #DCDCDC;"></p>
-
                     <form th:action="@{/feed/comment/delete/{comment_id}/post/{post_id}(comment_id=${c.id}, post_id=*{id})}" method="post" style="display:inline;">
                         <input type="hidden" name="_method" value="delete">
                         <button style="margin: 10px;" type="submit">DELETE</button>

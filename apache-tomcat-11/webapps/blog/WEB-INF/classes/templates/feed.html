@@ -13,6 +13,31 @@
 <h1>POSTS</h1>
 <button class="btn-add" onclick="toggleForm()">Add Post</button>
 
+<div class="form-container" style="display: none;" id="postForm">
+    <h2>Create Post</h2>
+    <form th:action="@{/feed}" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="imageUrl">Image:</label>
+        <input type="url" id="imageUrl" name="imageUrl" required>
+
+        <label for="description">Description:</label>
+        <textarea
+                id="description"
+                name="description"
+                cols="30"
+                rows="10"
+                required
+        ></textarea>
+
+        <label for="tags">Tags:</label>
+        <input type="text" id="tags" name="tags" required>
+
+        <button type="submit">Create</button>
+    </form>
+</div>
+
 <h2>Filtering by tag...</h2>
 
 <form th:action="@{/feed}" method="get" th:switch="${feed.keyword}">
@@ -78,32 +103,6 @@
     </div>
 
 </article>
-
-
-<div class="form-container" style="display: none;" id="postForm">
-    <h2>Create Post</h2>
-    <form th:action="@{/feed}" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="imageUrl">Image:</label>
-        <input type="url" id="imageUrl" name="imageUrl" required>
-
-        <label for="description">Description:</label>
-        <textarea
-                id="description"
-                name="description"
-                cols="30"
-                rows="10"
-                required
-        ></textarea>
-
-        <label for="tags">Tags:</label>
-        <input type="text" id="tags" name="tags" required>
-
-        <button type="submit">Create</button>
-    </form>
-</div>
 
 <!--<div class="form-container" style="display: none;" id="postForm">
     <h2>Create Post</h2>
