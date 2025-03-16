@@ -89,7 +89,11 @@
         <div class="post-border">
             <tr th:each="c : *{comments}">
                 <td><p th:text="${c.postComment}" style="background-color: #DCDCDC;"></p>
-                    <button style="margin: 10px;">DELETE</button>
+
+                    <form th:action="@{/feed/comment/delete/{comment_id}/post/{post_id}(comment_id=${c.id}, post_id=*{id})}" method="post" style="display:inline;">
+                        <input type="hidden" name="_method" value="delete">
+                        <button style="margin: 10px;" type="submit">DELETE</button>
+                    </form>
                 </td>
                 <hr/>
             </tr>

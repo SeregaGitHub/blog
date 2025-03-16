@@ -104,4 +104,9 @@ public class PostServiceImpl implements PostService {
     public void addLike(Integer postId) {
         repository.addLike(postId);
     }
+
+    @Override
+    public void deleteComment(Integer commentId, Integer postId) {
+        repository.deleteComment(commentId, postId);
+    }
 }

@@ -211,4 +211,21 @@ public class PostRepositoryImpl implements PostRepository {
                 postId, postId
         );
     }
+
+    @Override
+    public void deleteComment(Integer commentId, Integer postId) {
+        jdbcTemplate.update(
+                """
+                        BEGIN;
+                        	DELETE FROM comment
+                        	WHERE id = ?;
+                        
+                        	UPDATE post
+                        	SET commentsCount = commentsCount - 1
+                        	WHERE id = ?;
+                        COMMIT;
+                        """,
+                commentId, postId
+        );
+    }
 }

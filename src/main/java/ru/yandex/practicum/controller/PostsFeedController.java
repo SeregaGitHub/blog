@@ -61,4 +61,12 @@ public class PostsFeedController {
         service.addLike(post_id);
         return "redirect:/feed/" + post_id;
     }
+
+    @PostMapping(value = "/comment/delete/{comment_id}/post/{post_id}", params = "_method=delete")
+    public String delete(@PathVariable(name = "comment_id") Integer commentId,
+                         @PathVariable(name = "post_id") Integer postId) {
+        service.deleteComment(commentId, postId);
+        return "redirect:/feed/" + postId;
+    }
+    // http://localhost:8080/blog/feed/comment/delete/2/post/19
 }

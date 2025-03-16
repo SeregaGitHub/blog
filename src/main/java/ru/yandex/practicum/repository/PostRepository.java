@@ -25,5 +25,7 @@ public interface PostRepository {
 
     void addLike(Integer postId);
 
+    void deleteComment(Integer commentId, Integer postId);
+
     //List<PostFeedDto> findAllPosts();
 }
