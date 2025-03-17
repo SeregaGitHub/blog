@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.stereotype.Repository;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.PostDto;
+import ru.yandex.practicum.dto.UpdatePostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
 import ru.yandex.practicum.util.Utilities;
@@ -238,5 +239,30 @@ public class PostRepositoryImpl implements PostRepository {
                         """,
                 postId
         );
+    }
+
+    @Override
+    public void updatePost(PostDto postDto) {
+        List<SqlParameter> procedureParams = List.of(
+                new SqlParameter("id", Types.INTEGER),
+                new SqlParameter("post_name", Types.VARCHAR),
+                new SqlParameter("image_url", Types.VARCHAR),
+                new SqlParameter("description", Types.ARRAY),
+                new SqlParameter("tags_array", Types.ARRAY)
+        );
+
+        jdbcTemplate.call(connection -> {
+            Array sqlDescriptionArray = connection.createArrayOf("text", postDto.getDescription());
+            Array sqlTagsArray = connection.createArrayOf("varchar", postDto.getTags());
+
+            CallableStatement callableStatement = connection.prepareCall("call update_post(?, ?, ?, ?, ?)");
+            callableStatement.setInt(1, postDto.getId());
+            callableStatement.setString(2, postDto.getName());
+            callableStatement.setString(3, postDto.getImageUrl());
+            callableStatement.setArray(4, sqlDescriptionArray);
+            callableStatement.setArray(5, sqlTagsArray);
+
+            return callableStatement;
+        }, procedureParams);
     }
 }

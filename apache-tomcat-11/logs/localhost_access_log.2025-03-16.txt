@@ -223,3 +223,10 @@
 0:0:0:0:0:0:0:1 - - [16/Mar/2025:18:42:24 +0300] "GET /blog/feed HTTP/1.1" 200 9722
 0:0:0:0:0:0:0:1 - - [16/Mar/2025:18:42:24 +0300] "GET /blog/static/style/css.css HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [16/Mar/2025:18:42:24 +0300] "GET /blog/static/script/js.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Mar/2025:18:43:09 +0300] "GET /blog/feed/20 HTTP/1.1" 200 3685
+0:0:0:0:0:0:0:1 - - [16/Mar/2025:18:43:09 +0300] "GET /blog/static/style/post.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Mar/2025:18:43:09 +0300] "GET /blog/static/script/js.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Mar/2025:22:48:38 +0300] "POST /blog/feed/delete/20 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [16/Mar/2025:22:48:38 +0300] "GET /blog/feed HTTP/1.1" 200 9749
+0:0:0:0:0:0:0:1 - - [16/Mar/2025:22:48:38 +0300] "GET /blog/static/style/css.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Mar/2025:22:48:38 +0300] "GET /blog/static/script/js.js HTTP/1.1" 304 -

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
+import ru.yandex.practicum.dto.UpdatePostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
 import ru.yandex.practicum.repository.PostRepositoryImpl;
@@ -113,5 +114,12 @@ public class PostServiceImpl implements PostService {
     @Override
     public void deletePost(Integer postId) {
         repository.deletePost(postId);
+    }
+
+    @Override
+    public void updatePost(UpdatePostDto updatePostDto, Integer postId) {
+        updatePostDto.setId(postId);
+        repository.updatePost(Utilities.toPostDto(updatePostDto));
+        //repository.updatePost(updatePostDto);
     }
 }

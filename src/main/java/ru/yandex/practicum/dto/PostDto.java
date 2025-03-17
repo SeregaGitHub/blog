@@ -9,14 +9,15 @@ import java.util.List;
 @Value
 @Builder
 public class PostDto {
+    Integer id;
     @NonNull
-    private String name;
+    String name;
     @NonNull
-    private String imageUrl;
+    String imageUrl;
     @NonNull
     //private List<String> description;
-    private String[] description;
+    String[] description;
     @NonNull
     //private List<String> tags;
-    private String[] tags;
+    String[] tags;
 }

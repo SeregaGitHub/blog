@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
+import ru.yandex.practicum.dto.UpdatePostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.service.PostService;
 import ru.yandex.practicum.util.PageProperties;
@@ -68,5 +69,11 @@ public class PostsFeedController {
     public String delete(@PathVariable(name = "post_id") Integer postId) {
         service.deletePost(postId);
         return "redirect:/feed";
+    }
+
+    @PostMapping(value = "/update/{post_id}")
+    public String save(@ModelAttribute UpdatePostDto updatePostDto, @PathVariable(name = "post_id") Integer postId) {
+        service.updatePost(updatePostDto, postId);
+        return "redirect:/feed/" + postId;
     }
 }

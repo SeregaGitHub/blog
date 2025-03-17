@@ -5,6 +5,7 @@ import lombok.experimental.UtilityClass;
 import ru.yandex.practicum.dto.CommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.dto.PostDto;
+import ru.yandex.practicum.dto.UpdatePostDto;
 
 import java.sql.Array;
 import java.sql.SQLException;
@@ -71,6 +72,16 @@ public class Utilities {
                 .description(Arrays.stream(createPostDto.getDescription().split("\n")).toList().toArray(new String[0]))
                 //.tags(new ArrayList<>(List.of(createPostDto.getTags().split(" "))))
                 .tags(Arrays.stream(createPostDto.getTags().split(" ")).toList().toArray(new String[0]))
+                .build();
+    }
+
+    public PostDto toPostDto(UpdatePostDto updatePostDto) {
+        return PostDto.builder()
+                .id(updatePostDto.getId())
+                .name(updatePostDto.getName())
+                .imageUrl(updatePostDto.getImageUrl())
+                .description(Arrays.stream(updatePostDto.getDescription().split("\n")).toList().toArray(new String[0]))
+                .tags(Arrays.stream(updatePostDto.getTags().split(" ")).toList().toArray(new String[0]))
                 .build();
     }
 

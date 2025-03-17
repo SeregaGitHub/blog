@@ -847,3 +847,9 @@
 16-Mar-2025 18:41:27.648 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war]
 16-Mar-2025 18:41:28.732 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
 16-Mar-2025 18:41:29.824 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war] has finished in [2 175] ms
+16-Mar-2025 22:48:52.533 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+16-Mar-2025 22:48:52.534 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+16-Mar-2025 22:48:52.535 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+16-Mar-2025 22:48:52.552 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [blog] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+16-Mar-2025 22:48:52.569 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+16-Mar-2025 22:48:52.580 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
