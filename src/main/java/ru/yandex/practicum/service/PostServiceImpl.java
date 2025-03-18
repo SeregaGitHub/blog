@@ -9,6 +9,7 @@ import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
 import ru.yandex.practicum.repository.PostRepositoryImpl;
 import ru.yandex.practicum.util.PageProperties;
+import ru.yandex.practicum.util.PostProperties;
 import ru.yandex.practicum.util.Utilities;
 
 import java.util.List;
@@ -88,11 +89,22 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public Post findPost(Integer id) {
-        Optional<Post> optional = repository.findPost(id);
-        return optional.orElseThrow(
-                () -> new RuntimeException("This post is not exist")
-        );
+    public PostProperties findPost(Integer id) {
+        Post post = repository.findPost(id).orElseThrow(
+                () -> new RuntimeException("This post is not exist"));
+
+        UpdatePostDto updatePostDto = UpdatePostDto.builder()
+                .id(post.getId())
+                .name(post.getName())
+                .imageUrl(post.getImageUrl())
+                .description(Utilities.toStringFromList(post.getDescription(), "\n"))
+                .tags(Utilities.toStringFromList(post.getTags(), " "))
+                .build();
+
+        return PostProperties.builder()
+                .post(post)
+                .updatePostDto(updatePostDto)
+                .build();
     }
 
     @Override

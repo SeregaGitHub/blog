@@ -6,6 +6,7 @@ import ru.yandex.practicum.dto.UpdatePostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
 import ru.yandex.practicum.util.PageProperties;
+import ru.yandex.practicum.util.PostProperties;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public interface PostService {
     PageProperties findPosts(Integer page, Integer size, String prev, String next, Integer postsCount, String keyword);
 
 
-    Post findPost(Integer id);
+    PostProperties findPost(Integer id);
 
     void saveComment(CreateCommentDto createCommentDto, Integer post_id);
 

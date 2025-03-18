@@ -24,6 +24,7 @@
     </div>
 
     <div style="display: flex; justify-content: center; margin-top: 10px;">
+<!--    <div th:object="${updatePostDto}" style="display: flex; justify-content: center; margin-top: 10px;">-->
 <!--        <form th:action="@{/feed/{post_id}(post_id=*{id})}" method="post">
             <input type="hidden" name="_method" value="delete">
             <button style="margin: 10px;" type="submit">UPDATE</button>
@@ -36,7 +37,7 @@
         </form>
     </div>
 
-    <div class="form-container" style="display: none;" id="postUpdateForm">
+    <div th:object="${updatePostDto}" class="form-container" style="display: none;" id="postUpdateForm">
         <h2>Update Post</h2>
         <form th:action="@{/feed/update/{post_id}(post_id=*{id})}" method="POST">
             <label for="name">Name:</label>

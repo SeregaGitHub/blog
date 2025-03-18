@@ -18087,3 +18087,369 @@ SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
 17-Mar-2025 05:42:37.369 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager] has finished in [20] ms
 17-Mar-2025 05:42:37.374 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 17-Mar-2025 05:42:37.394 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3593] milliseconds
+17-Mar-2025 05:49:22.209 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+17-Mar-2025 05:49:22.210 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+17-Mar-2025 05:49:22.212 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+17-Mar-2025 05:49:22.228 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [blog] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+17-Mar-2025 05:49:22.249 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+17-Mar-2025 05:49:22.255 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+17-Mar-2025 05:49:29.314 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Имя версии сервера:    Apache Tomcat/11.0.2
+17-Mar-2025 05:49:29.318 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Сервер собран:         Dec 5 2024 15:19:37 UTC
+17-Mar-2025 05:49:29.318 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Номер версии сервера:  11.0.2.0
+17-Mar-2025 05:49:29.318 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+17-Mar-2025 05:49:29.318 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия ОС:             6.8.0-55-generic
+17-Mar-2025 05:49:29.319 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Архитектура:           amd64
+17-Mar-2025 05:49:29.319 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+17-Mar-2025 05:49:29.319 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия JVM:            21.0.6+7-Ubuntu-124.04.1
+17-Mar-2025 05:49:29.319 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Производитель JVM:     Ubuntu
+17-Mar-2025 05:49:29.319 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+17-Mar-2025 05:49:29.319 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+17-Mar-2025 05:49:29.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/conf/logging.properties
+17-Mar-2025 05:49:29.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Mar-2025 05:49:29.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+17-Mar-2025 05:49:29.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+17-Mar-2025 05:49:29.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+17-Mar-2025 05:49:29.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+17-Mar-2025 05:49:29.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+17-Mar-2025 05:49:29.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-Mar-2025 05:49:29.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Mar-2025 05:49:29.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+17-Mar-2025 05:49:29.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+17-Mar-2025 05:49:29.333 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+17-Mar-2025 05:49:29.333 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/temp
+17-Mar-2025 05:49:29.335 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+17-Mar-2025 05:49:29.737 INFO [main] org.apache.coyote.AbstractProtocol.init Инициализация ProtocolHandler ["http-nio-8080"]
+17-Mar-2025 05:49:29.764 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [649] milliseconds
+17-Mar-2025 05:49:29.811 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+17-Mar-2025 05:49:29.811 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.2]
+17-Mar-2025 05:49:29.826 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war]
+17-Mar-2025 05:49:31.477 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+17-Mar-2025 05:49:33.796 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war] has finished in [3 969] ms
+17-Mar-2025 05:49:33.797 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs]
+17-Mar-2025 05:49:33.823 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs] has finished in [26] ms
+17-Mar-2025 05:49:33.824 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT]
+17-Mar-2025 05:49:33.847 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT] has finished in [24] ms
+17-Mar-2025 05:49:33.848 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples]
+17-Mar-2025 05:49:34.117 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples] has finished in [270] ms
+17-Mar-2025 05:49:34.118 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager]
+17-Mar-2025 05:49:34.145 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager] has finished in [27] ms
+17-Mar-2025 05:49:34.145 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager]
+17-Mar-2025 05:49:34.174 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager] has finished in [28] ms
+17-Mar-2025 05:49:34.179 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+17-Mar-2025 05:49:34.191 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4425] milliseconds
+17-Mar-2025 07:59:37.346 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+17-Mar-2025 07:59:37.347 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+17-Mar-2025 07:59:37.348 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+17-Mar-2025 07:59:37.361 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [blog] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+17-Mar-2025 07:59:37.378 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+17-Mar-2025 07:59:37.381 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:17:22.198 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Имя версии сервера:    Apache Tomcat/11.0.2
+18-Mar-2025 10:17:22.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Сервер собран:         Dec 5 2024 15:19:37 UTC
+18-Mar-2025 10:17:22.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Номер версии сервера:  11.0.2.0
+18-Mar-2025 10:17:22.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+18-Mar-2025 10:17:22.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия ОС:             6.8.0-55-generic
+18-Mar-2025 10:17:22.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Архитектура:           amd64
+18-Mar-2025 10:17:22.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+18-Mar-2025 10:17:22.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия JVM:            21.0.6+7-Ubuntu-124.04.1
+18-Mar-2025 10:17:22.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Производитель JVM:     Ubuntu
+18-Mar-2025 10:17:22.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:17:22.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:17:22.224 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/conf/logging.properties
+18-Mar-2025 10:17:22.224 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Mar-2025 10:17:22.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+18-Mar-2025 10:17:22.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+18-Mar-2025 10:17:22.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+18-Mar-2025 10:17:22.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+18-Mar-2025 10:17:22.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+18-Mar-2025 10:17:22.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+18-Mar-2025 10:17:22.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+18-Mar-2025 10:17:22.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+18-Mar-2025 10:17:22.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:17:22.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:17:22.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/temp
+18-Mar-2025 10:17:22.228 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+18-Mar-2025 10:17:22.675 INFO [main] org.apache.coyote.AbstractProtocol.init Инициализация ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:17:22.703 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [791] milliseconds
+18-Mar-2025 10:17:22.756 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Mar-2025 10:17:22.756 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.2]
+18-Mar-2025 10:17:22.772 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war]
+18-Mar-2025 10:17:24.996 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+18-Mar-2025 10:17:27.724 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war] has finished in [4 951] ms
+18-Mar-2025 10:17:27.725 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs]
+18-Mar-2025 10:17:27.754 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs] has finished in [29] ms
+18-Mar-2025 10:17:27.754 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT]
+18-Mar-2025 10:17:27.775 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT] has finished in [21] ms
+18-Mar-2025 10:17:27.775 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples]
+18-Mar-2025 10:17:28.004 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples] has finished in [229] ms
+18-Mar-2025 10:17:28.004 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager]
+18-Mar-2025 10:17:28.027 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager] has finished in [23] ms
+18-Mar-2025 10:17:28.027 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager]
+18-Mar-2025 10:17:28.048 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager] has finished in [21] ms
+18-Mar-2025 10:17:28.052 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:17:28.063 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5358] milliseconds
+18-Mar-2025 10:18:44.856 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+18-Mar-2025 10:18:44.857 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:18:44.858 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+18-Mar-2025 10:18:44.877 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [blog] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+18-Mar-2025 10:18:44.897 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:18:44.902 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:39:38.069 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Имя версии сервера:    Apache Tomcat/11.0.2
+18-Mar-2025 10:39:38.074 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Сервер собран:         Dec 5 2024 15:19:37 UTC
+18-Mar-2025 10:39:38.074 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Номер версии сервера:  11.0.2.0
+18-Mar-2025 10:39:38.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+18-Mar-2025 10:39:38.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия ОС:             6.8.0-55-generic
+18-Mar-2025 10:39:38.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Архитектура:           amd64
+18-Mar-2025 10:39:38.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+18-Mar-2025 10:39:38.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия JVM:            21.0.6+7-Ubuntu-124.04.1
+18-Mar-2025 10:39:38.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Производитель JVM:     Ubuntu
+18-Mar-2025 10:39:38.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:39:38.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:39:38.090 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/conf/logging.properties
+18-Mar-2025 10:39:38.090 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Mar-2025 10:39:38.090 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+18-Mar-2025 10:39:38.090 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+18-Mar-2025 10:39:38.090 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+18-Mar-2025 10:39:38.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+18-Mar-2025 10:39:38.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+18-Mar-2025 10:39:38.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+18-Mar-2025 10:39:38.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+18-Mar-2025 10:39:38.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+18-Mar-2025 10:39:38.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:39:38.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:39:38.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/temp
+18-Mar-2025 10:39:38.093 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+18-Mar-2025 10:39:38.501 INFO [main] org.apache.coyote.AbstractProtocol.init Инициализация ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:39:38.532 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [691] milliseconds
+18-Mar-2025 10:39:38.592 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Mar-2025 10:39:38.593 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.2]
+18-Mar-2025 10:39:38.617 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war]
+18-Mar-2025 10:39:40.598 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+18-Mar-2025 10:39:42.567 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war] has finished in [3 950] ms
+18-Mar-2025 10:39:42.568 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs]
+18-Mar-2025 10:39:42.593 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs] has finished in [24] ms
+18-Mar-2025 10:39:42.593 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT]
+18-Mar-2025 10:39:42.612 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT] has finished in [19] ms
+18-Mar-2025 10:39:42.612 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples]
+18-Mar-2025 10:39:42.803 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples] has finished in [191] ms
+18-Mar-2025 10:39:42.803 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager]
+18-Mar-2025 10:39:42.825 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager] has finished in [22] ms
+18-Mar-2025 10:39:42.826 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager]
+18-Mar-2025 10:39:42.845 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager] has finished in [20] ms
+18-Mar-2025 10:39:42.849 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:39:42.859 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4325] milliseconds
+18-Mar-2025 10:43:54.263 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+18-Mar-2025 10:43:54.264 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:43:54.266 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+18-Mar-2025 10:43:54.286 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [blog] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+18-Mar-2025 10:43:54.300 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:43:54.310 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:44:06.257 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Имя версии сервера:    Apache Tomcat/11.0.2
+18-Mar-2025 10:44:06.261 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Сервер собран:         Dec 5 2024 15:19:37 UTC
+18-Mar-2025 10:44:06.261 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Номер версии сервера:  11.0.2.0
+18-Mar-2025 10:44:06.261 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+18-Mar-2025 10:44:06.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия ОС:             6.8.0-55-generic
+18-Mar-2025 10:44:06.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Архитектура:           amd64
+18-Mar-2025 10:44:06.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+18-Mar-2025 10:44:06.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия JVM:            21.0.6+7-Ubuntu-124.04.1
+18-Mar-2025 10:44:06.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Производитель JVM:     Ubuntu
+18-Mar-2025 10:44:06.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:44:06.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:44:06.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/conf/logging.properties
+18-Mar-2025 10:44:06.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Mar-2025 10:44:06.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+18-Mar-2025 10:44:06.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+18-Mar-2025 10:44:06.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+18-Mar-2025 10:44:06.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+18-Mar-2025 10:44:06.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+18-Mar-2025 10:44:06.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+18-Mar-2025 10:44:06.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+18-Mar-2025 10:44:06.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+18-Mar-2025 10:44:06.274 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:44:06.274 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:44:06.274 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/temp
+18-Mar-2025 10:44:06.276 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+18-Mar-2025 10:44:06.636 INFO [main] org.apache.coyote.AbstractProtocol.init Инициализация ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:44:06.660 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [595] milliseconds
+18-Mar-2025 10:44:06.705 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Mar-2025 10:44:06.705 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.2]
+18-Mar-2025 10:44:06.721 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war]
+18-Mar-2025 10:44:08.421 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+18-Mar-2025 10:44:10.056 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war] has finished in [3 335] ms
+18-Mar-2025 10:44:10.057 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs]
+18-Mar-2025 10:44:10.079 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs] has finished in [22] ms
+18-Mar-2025 10:44:10.080 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT]
+18-Mar-2025 10:44:10.096 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT] has finished in [17] ms
+18-Mar-2025 10:44:10.097 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples]
+18-Mar-2025 10:44:10.326 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples] has finished in [229] ms
+18-Mar-2025 10:44:10.326 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager]
+18-Mar-2025 10:44:10.364 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager] has finished in [38] ms
+18-Mar-2025 10:44:10.364 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager]
+18-Mar-2025 10:44:10.389 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager] has finished in [25] ms
+18-Mar-2025 10:44:10.394 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:44:10.404 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3742] milliseconds
+18-Mar-2025 10:45:39.955 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+18-Mar-2025 10:45:39.955 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:45:39.956 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+18-Mar-2025 10:45:39.975 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [blog] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+18-Mar-2025 10:45:39.995 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:45:40.000 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:45:46.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Имя версии сервера:    Apache Tomcat/11.0.2
+18-Mar-2025 10:45:46.032 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Сервер собран:         Dec 5 2024 15:19:37 UTC
+18-Mar-2025 10:45:46.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Номер версии сервера:  11.0.2.0
+18-Mar-2025 10:45:46.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+18-Mar-2025 10:45:46.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия ОС:             6.8.0-55-generic
+18-Mar-2025 10:45:46.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Архитектура:           amd64
+18-Mar-2025 10:45:46.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+18-Mar-2025 10:45:46.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия JVM:            21.0.6+7-Ubuntu-124.04.1
+18-Mar-2025 10:45:46.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Производитель JVM:     Ubuntu
+18-Mar-2025 10:45:46.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:45:46.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:45:46.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/conf/logging.properties
+18-Mar-2025 10:45:46.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Mar-2025 10:45:46.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+18-Mar-2025 10:45:46.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+18-Mar-2025 10:45:46.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+18-Mar-2025 10:45:46.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+18-Mar-2025 10:45:46.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+18-Mar-2025 10:45:46.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+18-Mar-2025 10:45:46.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+18-Mar-2025 10:45:46.046 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+18-Mar-2025 10:45:46.046 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:45:46.046 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 10:45:46.046 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/temp
+18-Mar-2025 10:45:46.048 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+18-Mar-2025 10:45:46.429 INFO [main] org.apache.coyote.AbstractProtocol.init Инициализация ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:45:46.453 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [615] milliseconds
+18-Mar-2025 10:45:46.499 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Mar-2025 10:45:46.499 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.2]
+18-Mar-2025 10:45:46.514 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war]
+18-Mar-2025 10:45:48.179 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+18-Mar-2025 10:45:49.855 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war] has finished in [3 341] ms
+18-Mar-2025 10:45:49.856 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs]
+18-Mar-2025 10:45:49.882 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs] has finished in [25] ms
+18-Mar-2025 10:45:49.882 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT]
+18-Mar-2025 10:45:49.907 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT] has finished in [25] ms
+18-Mar-2025 10:45:49.907 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples]
+18-Mar-2025 10:45:50.160 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples] has finished in [253] ms
+18-Mar-2025 10:45:50.160 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager]
+18-Mar-2025 10:45:50.191 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager] has finished in [30] ms
+18-Mar-2025 10:45:50.191 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager]
+18-Mar-2025 10:45:50.215 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager] has finished in [24] ms
+18-Mar-2025 10:45:50.220 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 10:45:50.230 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3776] milliseconds
+18-Mar-2025 11:02:33.958 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Имя версии сервера:    Apache Tomcat/11.0.2
+18-Mar-2025 11:02:33.962 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Сервер собран:         Dec 5 2024 15:19:37 UTC
+18-Mar-2025 11:02:33.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Номер версии сервера:  11.0.2.0
+18-Mar-2025 11:02:33.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+18-Mar-2025 11:02:33.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия ОС:             6.8.0-55-generic
+18-Mar-2025 11:02:33.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Архитектура:           amd64
+18-Mar-2025 11:02:33.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+18-Mar-2025 11:02:33.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия JVM:            21.0.6+7-Ubuntu-124.04.1
+18-Mar-2025 11:02:33.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Производитель JVM:     Ubuntu
+18-Mar-2025 11:02:33.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 11:02:33.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 11:02:33.976 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/conf/logging.properties
+18-Mar-2025 11:02:33.976 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Mar-2025 11:02:33.976 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+18-Mar-2025 11:02:33.976 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+18-Mar-2025 11:02:33.976 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+18-Mar-2025 11:02:33.977 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+18-Mar-2025 11:02:33.977 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+18-Mar-2025 11:02:33.977 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+18-Mar-2025 11:02:33.977 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+18-Mar-2025 11:02:33.977 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+18-Mar-2025 11:02:33.977 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 11:02:33.977 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 11:02:33.977 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/temp
+18-Mar-2025 11:02:33.980 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+18-Mar-2025 11:02:34.353 INFO [main] org.apache.coyote.AbstractProtocol.init Инициализация ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 11:02:34.376 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [631] milliseconds
+18-Mar-2025 11:02:34.421 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Mar-2025 11:02:34.421 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.2]
+18-Mar-2025 11:02:34.438 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war]
+18-Mar-2025 11:02:34.457 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog] was found with a last modified time that did not match the associated WAR. It will be deleted.
+18-Mar-2025 11:02:35.981 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+18-Mar-2025 11:02:37.614 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war] has finished in [3 175] ms
+18-Mar-2025 11:02:37.615 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs]
+18-Mar-2025 11:02:37.642 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs] has finished in [28] ms
+18-Mar-2025 11:02:37.642 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT]
+18-Mar-2025 11:02:37.661 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT] has finished in [19] ms
+18-Mar-2025 11:02:37.661 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples]
+18-Mar-2025 11:02:37.853 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples] has finished in [192] ms
+18-Mar-2025 11:02:37.854 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager]
+18-Mar-2025 11:02:37.876 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager] has finished in [22] ms
+18-Mar-2025 11:02:37.876 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager]
+18-Mar-2025 11:02:37.896 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager] has finished in [20] ms
+18-Mar-2025 11:02:37.900 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 11:02:37.910 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3532] milliseconds
+18-Mar-2025 11:02:39.713 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+18-Mar-2025 11:02:39.714 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 11:02:39.715 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+18-Mar-2025 11:02:39.728 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [blog] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+18-Mar-2025 11:02:39.742 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 11:02:39.749 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 11:02:46.936 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Имя версии сервера:    Apache Tomcat/11.0.2
+18-Mar-2025 11:02:46.945 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Сервер собран:         Dec 5 2024 15:19:37 UTC
+18-Mar-2025 11:02:46.945 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Номер версии сервера:  11.0.2.0
+18-Mar-2025 11:02:46.946 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+18-Mar-2025 11:02:46.946 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия ОС:             6.8.0-55-generic
+18-Mar-2025 11:02:46.946 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Архитектура:           amd64
+18-Mar-2025 11:02:46.947 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+18-Mar-2025 11:02:46.947 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия JVM:            21.0.6+7-Ubuntu-124.04.1
+18-Mar-2025 11:02:46.947 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Производитель JVM:     Ubuntu
+18-Mar-2025 11:02:46.947 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 11:02:46.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 11:02:46.972 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/conf/logging.properties
+18-Mar-2025 11:02:46.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Mar-2025 11:02:46.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+18-Mar-2025 11:02:46.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+18-Mar-2025 11:02:46.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+18-Mar-2025 11:02:46.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+18-Mar-2025 11:02:46.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+18-Mar-2025 11:02:46.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+18-Mar-2025 11:02:46.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+18-Mar-2025 11:02:46.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+18-Mar-2025 11:02:46.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 11:02:46.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11
+18-Mar-2025 11:02:46.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/temp
+18-Mar-2025 11:02:46.979 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+18-Mar-2025 11:02:47.589 INFO [main] org.apache.coyote.AbstractProtocol.init Инициализация ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 11:02:47.619 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [946] milliseconds
+18-Mar-2025 11:02:47.682 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Mar-2025 11:02:47.682 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.2]
+18-Mar-2025 11:02:47.702 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war]
+18-Mar-2025 11:02:49.436 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+18-Mar-2025 11:02:51.407 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/blog.war] has finished in [3 704] ms
+18-Mar-2025 11:02:51.408 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs]
+18-Mar-2025 11:02:51.430 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/docs] has finished in [22] ms
+18-Mar-2025 11:02:51.431 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT]
+18-Mar-2025 11:02:51.452 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/ROOT] has finished in [21] ms
+18-Mar-2025 11:02:51.452 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples]
+18-Mar-2025 11:02:51.641 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/examples] has finished in [189] ms
+18-Mar-2025 11:02:51.641 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager]
+18-Mar-2025 11:02:51.663 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/host-manager] has finished in [22] ms
+18-Mar-2025 11:02:51.663 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager]
+18-Mar-2025 11:02:51.684 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/serega/YandexPr/Middle/Final_Sprint_Tasks/Spring/blog/apache-tomcat-11/webapps/manager] has finished in [21] ms
+18-Mar-2025 11:02:51.689 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+18-Mar-2025 11:02:51.699 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4078] milliseconds

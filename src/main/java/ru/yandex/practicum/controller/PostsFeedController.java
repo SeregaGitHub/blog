@@ -10,6 +10,7 @@ import ru.yandex.practicum.dto.UpdatePostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.service.PostService;
 import ru.yandex.practicum.util.PageProperties;
+import ru.yandex.practicum.util.PostProperties;
 
 @Controller
 @RequiredArgsConstructor
@@ -34,8 +35,9 @@ public class PostsFeedController {
 
     @GetMapping(value = "/{id}")
     public String findPost(Model model, @PathVariable(name = "id") Integer id) {
-        Post post = service.findPost(id);
-        model.addAttribute("post", post);
+        PostProperties postProperties = service.findPost(id);
+        model.addAttribute("post", postProperties.getPost());
+        model.addAttribute("updatePostDto", postProperties.getUpdatePostDto());
         return "post";
     }
 

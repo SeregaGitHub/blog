@@ -92,4 +92,13 @@ public class Utilities {
             default -> 10;
         };
     }
+
+    public String toStringFromList(List<String> list, String separator) {
+        StringBuilder builder = new StringBuilder();
+        for (String s: list) {
+            builder.append(s);
+            builder.append(separator);
+        }
+        return builder.toString();
+    }
 }
