@@ -37,7 +37,7 @@
         </form>
     </div>
 
-    <div th:object="${updatePostDto}" class="form-container" style="display: none;" id="postUpdateForm">
+    <div th:object="${post}" class="form-container" style="display: none;" id="postUpdateForm">
         <h2>Update Post</h2>
         <form th:action="@{/feed/update/{post_id}(post_id=*{id})}" method="POST">
             <label for="name">Name:</label>
@@ -52,12 +52,13 @@
                     name="description"
                     cols="30"
                     rows="10"
-                    th:field="*{description}"
+                    th:text="${#strings.listJoin(post.description, '&#10;')}"
                     required
             ></textarea>
 
             <label for="tags">Tags:</label>
-            <input type="text" id="tags" name="tags" th:field="*{tags}" required>
+            <input type="text" id="tags" name="tags" th:value="${#strings.listJoin(post.tags, ' ')}" required>
+<!--            <input type="text" id="tags" name="tags" th:field="*{tags}" required>-->
             <button style="margin: 10px;" type="submit">DO UPDATE</button>
         </form>
     </div>
