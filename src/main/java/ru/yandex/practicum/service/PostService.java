@@ -1,5 +1,6 @@
 package ru.yandex.practicum.service;
 
+import ru.yandex.practicum.dto.CommentDto;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.dto.UpdatePostDto;
@@ -32,4 +33,6 @@ public interface PostService {
     void deletePost(Integer postId);
 
     void updatePost(UpdatePostDto updatePostDto, Integer postId);
+
+    void updateComment(CommentDto commentDto, Integer commentId);
 }

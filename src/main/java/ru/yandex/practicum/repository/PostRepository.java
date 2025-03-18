@@ -1,5 +1,6 @@
 package ru.yandex.practicum.repository;
 
+import ru.yandex.practicum.dto.CommentDto;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.PostDto;
 import ru.yandex.practicum.dto.UpdatePostDto;
@@ -31,6 +32,8 @@ public interface PostRepository {
     void deletePost(Integer postId);
 
     void updatePost(PostDto postDto);
+
+    void updateComment(CommentDto commentDto);
 
     //List<PostFeedDto> findAllPosts();
 }

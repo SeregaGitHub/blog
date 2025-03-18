@@ -1,9 +1,11 @@
 package ru.yandex.practicum.dto;
 
-import lombok.Builder;
-import lombok.Value;
+import lombok.*;
 
-@Value
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class CommentDto {
     Integer id;

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.stereotype.Repository;
+import ru.yandex.practicum.dto.CommentDto;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.PostDto;
 import ru.yandex.practicum.dto.UpdatePostDto;
@@ -264,5 +265,17 @@ public class PostRepositoryImpl implements PostRepository {
 
             return callableStatement;
         }, procedureParams);
+    }
+
+    @Override
+    public void updateComment(CommentDto commentDto) {
+        jdbcTemplate.update(
+                """
+                        UPDATE comment
+                        SET post_comment = ?
+                        WHERE id = ?;
+                        """,
+                commentDto.getPostComment(), commentDto.getId()
+        );
     }
 }

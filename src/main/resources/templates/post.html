@@ -98,7 +98,7 @@
     <div style="display: flex; align-items: center; justify-content: center;">
         <div style="height: 100%">
             <div style="display: flex; align-items: center; justify-content: center;">
-                <button style="margin: 10px;"  onclick="toggleCommentForm()">ADD COMMENT</button>
+                <button style="margin: 10px;" onclick="toggleCommentForm()">ADD COMMENT</button>
                 <p style="font-size: 900;">Comments: </p>
             </div>
 
@@ -124,7 +124,19 @@
     <div style="display: flex; align-items: center; justify-content: center;">
         <div class="post-border">
             <tr th:each="c : *{comments}">
-                <td><p th:text="${c.postComment}" style="background-color: #DCDCDC;"></p>
+                <td><p th:text="${c.postComment}" style="background-color: #DCDCDC;" id="currentComment" onclick="updateComment()"></p>
+
+                    <div style="display: none;" id="updateComment">
+                        <form th:action="@{/feed/comment/update/{comment_id}/post/{post_id}(comment_id=${c.id}, post_id=*{id})}" method="POST">
+                            <label for="postComment">Comment:</label>
+                            <input type="text" id="postComment" th:value="${c.postComment}" name="postComment" required>
+
+                            <button style="margin: 10px;" type="submit">DO UPDATE</button>
+                        </form>
+                    </div>
+
+<!--                    <p style="display: none;" id="updateComment2" onclick="updateComment()">For testing</p>-->
+
                     <form th:action="@{/feed/comment/delete/{comment_id}/post/{post_id}(comment_id=${c.id}, post_id=*{id})}" method="post" style="display:inline;">
                         <input type="hidden" name="_method" value="delete">
                         <button style="margin: 10px;" type="submit">DELETE</button>

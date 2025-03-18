@@ -2,6 +2,7 @@ package ru.yandex.practicum.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.yandex.practicum.dto.CommentDto;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.dto.UpdatePostDto;
@@ -133,5 +134,11 @@ public class PostServiceImpl implements PostService {
         updatePostDto.setId(postId);
         repository.updatePost(Utilities.toPostDto(updatePostDto));
         //repository.updatePost(updatePostDto);
+    }
+
+    @Override
+    public void updateComment(CommentDto commentDto, Integer commentId) {
+        commentDto.setId(commentId);
+        repository.updateComment(commentDto);
     }
 }

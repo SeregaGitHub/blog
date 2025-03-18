@@ -13,7 +13,13 @@ function toggleCommentForm() {
         form.style.display = form.style.display === 'none' ? 'block' : 'none';
     }
 
+function updateComment() {
+        const updateCommentForm = document.getElementById('updateComment');
+        updateCommentForm.style.display = updateCommentForm.style.display === 'none' ? 'block' : 'none';
 
+        const currentComment = document.getElementById('currentComment');
+        currentComment.style.display = currentComment.style.display === 'none' ? 'block' : 'none';
+}
 
 let from = 0;
 let size = 10;
