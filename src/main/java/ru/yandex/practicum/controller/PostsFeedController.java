@@ -8,7 +8,6 @@ import ru.yandex.practicum.dto.CommentDto;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.dto.UpdatePostDto;
-import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.service.PostService;
 import ru.yandex.practicum.util.PageProperties;
 import ru.yandex.practicum.util.PostProperties;

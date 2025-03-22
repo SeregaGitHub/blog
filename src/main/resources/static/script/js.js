@@ -13,12 +13,9 @@ function toggleCommentForm() {
         form.style.display = form.style.display === 'none' ? 'block' : 'none';
     }
 
-function updateComment() {
-        const updateCommentForm = document.getElementById('updateComment');
-        updateCommentForm.style.display = updateCommentForm.style.display === 'none' ? 'block' : 'none';
-
-        const currentComment = document.getElementById('currentComment');
-        currentComment.style.display = currentComment.style.display === 'none' ? 'block' : 'none';
+function updateComment(id) {
+        document.getElementById(id).style.display = 'none';
+        document.getElementById('updateComment' + id).style.display = 'block';
 }
 
 let from = 0;

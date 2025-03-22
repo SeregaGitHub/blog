@@ -125,33 +125,17 @@
         <div class="post-border">
             <tr th:each="c : *{comments}">
                 <td>
-
-                    <!--<form th:action="@{/feed/comment/update/{comment_id}/post/{post_id}(comment_id=${c.id}, post_id=*{id})}"
-                          method="POST" style="display: none;" id="updateComment">
-                        <p th:text="${c.postComment}" style="background-color: #DCDCDC;" id="currentComment"
-                           onclick="updateComment()"></p>
-
-                        <div>
-                            <label for="postComment">Update Comment...:</label>
-                            <input type="text" id="postComment" th:value="${c.postComment}" name="postComment" required>
-                        </div>
-
-                        <button style="margin: 10px;" type="submit">DO UPDATE</button>
-                    </form>-->
-
                     <form th:action="@{/feed/comment/update/{comment_id}/post/{post_id}(comment_id=${c.id}, post_id=*{id})}" method="POST">
-                        <p th:text="${c.postComment}" style="background-color: #DCDCDC;" id="currentComment"
-                           onclick="updateComment()"></p>
+                        <p th:text="${c.postComment}" style="background-color: #DCDCDC;" th:id="${c.id}"
+                           onclick="updateComment(id)"></p>
 
-                        <div style="display: none;" id="updateComment">
+                        <div style="display: none;" th:id="${'updateComment'+c.id}">
                             <label for="postComment">Update Comment...</label>
                             <input type="text" id="postComment" th:value="${c.postComment}" name="postComment" required>
                             <button style="margin: 10px;" type="submit">DO UPDATE</button>
                         </div>
 
                     </form>
-
-                    <!--                    <p style="display: none;" id="updateComment2" onclick="updateComment()">For testing</p>-->
 
                     <form th:action="@{/feed/comment/delete/{comment_id}/post/{post_id}(comment_id=${c.id}, post_id=*{id})}"
                           method="post" style="display:inline;">
