@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import ru.yandex.practicum.dto.CommentDto;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.PostDto;
-import ru.yandex.practicum.dto.UpdatePostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
 import ru.yandex.practicum.util.Utilities;
@@ -54,12 +53,9 @@ public class PostRepositoryImpl implements PostRepository {
                         .id(rs.getInt("id"))
                         .name(rs.getString("name"))
                         .imageUrl(rs.getString("image_url"))
-                        //.abbreviatedDescription(rs.getArray())
                         .abbreviatedDescription(rs.getString("abbreviatedDescription"))
                         .commentsCount(rs.getInt("commentsCount"))
                         .likesCount(rs.getInt("likesCount"))
-                        //.tags(Utilities.arrayToList(rs.getArray("tags")))
-                        //.tags(List.of(rs.getString("tags").split(" ")))
                         .tags(rs.getString("tags"))
                         .build());
     }
@@ -107,12 +103,9 @@ public class PostRepositoryImpl implements PostRepository {
                         .id(rs.getInt("id"))
                         .name(rs.getString("name"))
                         .imageUrl(rs.getString("image_url"))
-                        //.abbreviatedDescription(rs.getArray())
                         .abbreviatedDescription(rs.getString("abbreviatedDescription"))
                         .commentsCount(rs.getInt("commentsCount"))
                         .likesCount(rs.getInt("likesCount"))
-                        //.tags(Utilities.arrayToList(rs.getArray("tags")))
-                        //.tags(List.of(rs.getString("tags").split(" ")))
                         .tags(rs.getString("tags"))
                         .build(),
                 offset, limit);
@@ -142,12 +135,9 @@ public class PostRepositoryImpl implements PostRepository {
                         .id(rs.getInt("id"))
                         .name(rs.getString("name"))
                         .imageUrl(rs.getString("image_url"))
-                        //.abbreviatedDescription(rs.getArray())
                         .abbreviatedDescription(rs.getString("abbreviatedDescription"))
                         .commentsCount(rs.getInt("commentsCount"))
                         .likesCount(rs.getInt("likesCount"))
-                        //.tags(Utilities.arrayToList(rs.getArray("tags")))
-                        //.tags(List.of(rs.getString("tags").split(" ")))
                         .tags(rs.getString("tags"))
                         .build(),
                 keyword, offset, limit);
@@ -179,9 +169,7 @@ public class PostRepositoryImpl implements PostRepository {
                         .description(Arrays.stream((String[]) rs.getArray("description").getArray()).toList())
                         .tags(List.of(rs.getString("tags").split(" ")))
                         .likes(rs.getInt("likesCount"))
-                        //.comments(Utilities.arrayToList(rs.getArray("comments")))
                         .comments(Utilities.arrayToList(rs.getArray("comments")))
-                        //.comments(Arrays.stream((Object[]) rs.getArray("comments").getArray()).toList())
                         .build(), id);
 
         return list.size() == 1 ? Optional.of(list.getFirst()) : Optional.empty();

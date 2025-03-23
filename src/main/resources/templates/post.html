@@ -15,6 +15,11 @@
 
 <div th:object="${post}" style="height: 100%; font-size: large;">
 
+    <form th:action="@{/feed}">
+        <input type="submit" value="Back to Feed" />
+    </form>
+
+
     <div style="display: flex; align-items: center; justify-content: center; font-size: large; font-weight: bold;">
         <p th:text="*{name}"></p>
     </div>
@@ -24,11 +29,6 @@
     </div>
 
     <div style="display: flex; justify-content: center; margin-top: 10px;">
-        <!--    <div th:object="${updatePostDto}" style="display: flex; justify-content: center; margin-top: 10px;">-->
-        <!--        <form th:action="@{/feed/{post_id}(post_id=*{id})}" method="post">
-                    <input type="hidden" name="_method" value="delete">
-                    <button style="margin: 10px;" type="submit">UPDATE</button>
-                </form>-->
         <button style="margin: 10px;" onclick="togglePostUpdateForm()">UPDATE</button>
 
         <form th:action="@{/feed/delete/{post_id}(post_id=*{id})}" method="post">
@@ -58,7 +58,6 @@
 
             <label for="tags">Tags:</label>
             <input type="text" id="tags" name="tags" th:value="${#strings.listJoin(post.tags, ' ')}" required>
-            <!--            <input type="text" id="tags" name="tags" th:field="*{tags}" required>-->
             <button style="margin: 10px;" type="submit">DO UPDATE</button>
         </form>
     </div>
@@ -125,7 +124,8 @@
         <div class="post-border">
             <tr th:each="c : *{comments}">
                 <td>
-                    <form th:action="@{/feed/comment/update/{comment_id}/post/{post_id}(comment_id=${c.id}, post_id=*{id})}" method="POST">
+                    <form th:action="@{/feed/comment/update/{comment_id}/post/{post_id}(comment_id=${c.id}, post_id=*{id})}"
+                          method="POST">
                         <p th:text="${c.postComment}" style="background-color: #DCDCDC;" th:id="${c.id}"
                            onclick="updateComment(id)"></p>
 

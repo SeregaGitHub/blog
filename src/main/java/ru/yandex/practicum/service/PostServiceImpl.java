@@ -15,7 +15,6 @@ import ru.yandex.practicum.util.Utilities;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -37,7 +36,6 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    //public List<PostsFeed> findPosts(Integer from, Integer pageSize) {
     public List<PostsFeed> findPosts(String size, String prev, String next) {
 
         if (size != null) {
@@ -133,7 +131,6 @@ public class PostServiceImpl implements PostService {
     public void updatePost(UpdatePostDto updatePostDto, Integer postId) {
         updatePostDto.setId(postId);
         repository.updatePost(Utilities.toPostDto(updatePostDto));
-        //repository.updatePost(updatePostDto);
     }
 
     @Override

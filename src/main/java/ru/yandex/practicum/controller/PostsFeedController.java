@@ -42,7 +42,7 @@ public class PostsFeedController {
     }
 
     @PostMapping
-    public String save(@ModelAttribute CreatePostDto createPostDto) {
+    public String savePost(@ModelAttribute CreatePostDto createPostDto) {
         service.save(createPostDto);
         return "redirect:/feed";
     }
@@ -61,20 +61,20 @@ public class PostsFeedController {
     }
 
     @PostMapping(value = "/comment/delete/{comment_id}/post/{post_id}", params = "_method=delete")
-    public String delete(@PathVariable(name = "comment_id") Integer commentId,
+    public String deleteComment(@PathVariable(name = "comment_id") Integer commentId,
                          @PathVariable(name = "post_id") Integer postId) {
         service.deleteComment(commentId, postId);
         return "redirect:/feed/" + postId;
     }
 
     @PostMapping(value = "/delete/{post_id}", params = "_method=delete")
-    public String delete(@PathVariable(name = "post_id") Integer postId) {
+    public String deletePost(@PathVariable(name = "post_id") Integer postId) {
         service.deletePost(postId);
         return "redirect:/feed";
     }
 
     @PostMapping(value = "/update/{post_id}")
-    public String save(@ModelAttribute UpdatePostDto updatePostDto, @PathVariable(name = "post_id") Integer postId) {
+    public String updatePost(@ModelAttribute UpdatePostDto updatePostDto, @PathVariable(name = "post_id") Integer postId) {
         service.updatePost(updatePostDto, postId);
         return "redirect:/feed/" + postId;
     }
