@@ -1,3 +1,5 @@
+'use strict';
+
 function toggleForm() {
         const form = document.getElementById('postForm');
         form.style.display = form.style.display === 'none' ? 'block' : 'none';
@@ -16,52 +18,40 @@ function toggleCommentForm() {
 function updateComment(id) {
         document.getElementById(id).style.display = 'none';
         document.getElementById('updateComment' + id).style.display = 'block';
+        const form = document.getElementById('form' + id);
+
+        form.addEventListener('keydown', (event) => {
+                            if (event.ctrlKey && (event.keyCode == 13 || event.keyCode == 10)) {
+                                form.submit();
+                            }
+                        });
+
+
+        /*document.getElementById(id).style.display = 'none';
+        let updateComment = document.getElementById('updateComment' + id);
+
+        updateComment.style.display = 'block';
+        console.log(updateComment);
+
+        updateComment.addEventListener('keydown', (event) =>{
+            if (event.ctrlKey && (event.keyCode == 13 || event.keyCode == 10)) {
+                console.log("Work !!!");
+            }
+        });
+
+        let display = document.querySelector('#postComment' + id);
+        console.log(display.value);
+
+
+
+        let form = document.getElementById('form' + id);
+        console.log(form);
+
+        display.addEventListener('keydown', (event) =>{
+                    if (event.ctrlKey && (event.keyCode == 13 || event.keyCode == 10)) {
+                        console.log("display - work !!!");
+                        form.submit();
+                        console.log("form - work !!!");
+                    }
+                });*/
 }
-
-let from = 0;
-let size = 10;
-//let currentPage = 0;
-
-//function setRowCount() {
-//
-//        this.to =
-//    }
-
-setRowCount10 = () => {
-    size = document.querySelector(".pag-value-10").value;
-    from = 0;
-//    currentPage = 0;
-    console.log(document.querySelector(".pag-value-10").value);
-    console.log(size);
-
-    const xhr = new XMLHttpRequest(); // создаем объект запроса
-    xhr.open('GET', 'http://localhost:8080/blog/feed?from=' + from + '&size=' + size); // настраиваем запрос (метод и URL)
-    xhr.send(); // отправляем запрос
-}
-
-setRowCount20 = () => {
-    size = document.querySelector(".pag-value-20").value;
-    from = 0;
-//    currentPage = 0;
-    console.log(document.querySelector(".pag-value-20").value);
-    console.log(size);
-
-    const xhr = new XMLHttpRequest(); // создаем объект запроса
-    xhr.open('GET', 'http://localhost:8080/blog/feed?from=' + from + '&size=' + size); // настраиваем запрос (метод и URL)
-    xhr.send(); // отправляем запрос
-}
-
-setRowCount50 = () => {
-    size = document.querySelector(".pag-value-50").value;
-    from = 0;
-//    currentPage = 0;
-    console.log(document.querySelector(".pag-value-50").value);
-    console.log(size);
-
-    const xhr = new XMLHttpRequest(); // создаем объект запроса
-    xhr.open('GET', 'http://localhost:8080/blog/feed?from=' + from + '&size=' + size); // настраиваем запрос (метод и URL)
-    xhr.send(); // отправляем запрос
-}
-//next = () => {
-//
-//}

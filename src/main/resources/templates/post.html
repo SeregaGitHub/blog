@@ -125,14 +125,22 @@
             <tr th:each="c : *{comments}">
                 <td>
                     <form th:action="@{/feed/comment/update/{comment_id}/post/{post_id}(comment_id=${c.id}, post_id=*{id})}"
-                          method="POST">
+                          method="POST" th:id="${'form'+c.id}">
                         <p th:text="${c.postComment}" style="background-color: #DCDCDC;" th:id="${c.id}"
                            onclick="updateComment(id)"></p>
 
                         <div style="display: none;" th:id="${'updateComment'+c.id}">
-                            <label for="postComment">Update Comment...</label>
-                            <input type="text" id="postComment" th:value="${c.postComment}" name="postComment" required>
-                            <button style="margin: 10px;" type="submit">DO UPDATE</button>
+<!--                            <label for="postComment">Update Comment...</label>-->
+                            <label>To update comment - press "Ctrl + Enter"</label>
+                            <textarea
+                                    th:id="${'postComment'+c.id}"
+                                    th:text="${c.postComment}"
+                                    name="postComment"
+                                    cols="70"
+                                    rows="10"
+                                    required
+                            ></textarea>
+<!--                            <button style="margin: 10px;" type="submit">DO UPDATE</button>-->
                         </div>
 
                     </form>
