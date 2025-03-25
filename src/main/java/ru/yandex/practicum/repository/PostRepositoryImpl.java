@@ -24,44 +24,7 @@ public class PostRepositoryImpl implements PostRepository {
     private final JdbcTemplate jdbcTemplate;
 
     @Override
-    public Integer findPostsCount() {
-        return jdbcTemplate.queryForObject(
-                """
-                        SELECT COUNT(*) AS posts_count FROM post;
-                        """,
-                            Integer.class
-        );
-    }
-
-    @Override
-    public List<PostsFeed> findAll() {
-        return jdbcTemplate.query(
-                """
-                        SELECT p.id, p.name, p.image_url, SUBSTRING(p.description[1], 1, 7) AS abbreviatedDescription,
-                        p.commentsCount, COALESCE (l.count, 0) AS likesCount,
-                        COALESCE (STRING_AGG(t.name, ' '), '') AS tags
-                        FROM post p
-                        LEFT JOIN likes l ON l.post_id = p.id
-                        LEFT JOIN post_tag pt ON p.id = pt.post_id
-                        LEFT JOIN tag t ON t.id = pt.tag_id
-                        GROUP BY p.id, l.count
-                        ORDER BY p.id DESC
-                        OFFSET 0
-                        LIMIT 20;
-                        """,
-                (rs, rowNum) -> PostsFeed.builder()
-                        .id(rs.getInt("id"))
-                        .name(rs.getString("name"))
-                        .imageUrl(rs.getString("image_url"))
-                        .abbreviatedDescription(rs.getString("abbreviatedDescription"))
-                        .commentsCount(rs.getInt("commentsCount"))
-                        .likesCount(rs.getInt("likesCount"))
-                        .tags(rs.getString("tags"))
-                        .build());
-    }
-
-    @Override
-    public void save(PostDto postDto) {
+    public void savePost(PostDto postDto) {
         List<SqlParameter> procedureParams = List.of(
                 new SqlParameter("post_name", Types.VARCHAR),
                 new SqlParameter("image_url", Types.VARCHAR),

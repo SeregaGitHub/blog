@@ -346,3 +346,7 @@
 0:0:0:0:0:0:0:1 - - [23/Mar/2025:10:33:54 +0300] "GET /blog/static/style/post.css HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [23/Mar/2025:10:33:54 +0300] "GET /blog/static/style/css.css HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [23/Mar/2025:10:33:54 +0300] "GET /blog/static/script/js.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Mar/2025:16:15:55 +0300] "GET /blog/feed HTTP/1.1" 200 9743
+0:0:0:0:0:0:0:1 - - [23/Mar/2025:16:15:55 +0300] "GET /blog/static/script/js.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Mar/2025:16:15:55 +0300] "GET /blog/static/style/css.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Mar/2025:16:16:00 +0300] "GET /blog/feed HTTP/1.1" 200 9743

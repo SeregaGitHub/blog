@@ -25,7 +25,7 @@ function updateComment(id) {
                                 form.submit();
                             }
                         });
-
+    }
 
         /*document.getElementById(id).style.display = 'none';
         let updateComment = document.getElementById('updateComment' + id);
@@ -54,4 +54,4 @@ function updateComment(id) {
                         console.log("form - work !!!");
                     }
                 });*/
-}
+

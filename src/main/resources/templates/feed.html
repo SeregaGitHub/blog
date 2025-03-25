@@ -41,7 +41,6 @@
 <h2>Filtering by tag...</h2>
 
 <form th:action="@{/feed}" method="get" th:switch="${feed.keyword}">
-<!--    <input th:case="''" name="keyword" placeholder="Enter the keyword..." type="search">-->
     <input th:case="null" name="keyword" placeholder="Enter the keyword..." type="search">
     <input th:case="*" name="keyword" th:value="${feed.keyword}" type="search">
     <button type="submit" th:name="size" th:value="${feed.size}">Поиск</button>
@@ -63,16 +62,12 @@
         <tbody>
 
         <tr th:each="postsFeed : ${feed.postsFeedList}">
-            <td> <a th:href="@{/feed/{id} (id=${postsFeed.id})}"> <p th:text="${postsFeed.name}"></p> </a> </td>
-<!--            <td th:text="${postsFeed.name}"></td>-->
+            <td><a th:href="@{/feed/{id} (id=${postsFeed.id})}"><p th:text="${postsFeed.name}"></p></a></td>
             <td><img th:src="${postsFeed.imageUrl}" alt="Image not found" width="50px" height="50px"/></td>
             <td th:text="${postsFeed.abbreviatedDescription}"></td>
             <td th:text="${postsFeed.likesCount}"></td>
             <td th:text="${postsFeed.commentsCount}"></td>
             <td th:text="${postsFeed.tags}"></td>
-            <!--<td>
-                <p th:each="tag: ${postsFeed.tags}"> <span th:text="${tag}"/>
-            </td>-->
         </tr>
         </tbody>
 
@@ -80,15 +75,27 @@
 
 
     <div style="flex-direction: row; margin-bottom: 45px">
-        <a th:if="${feed.keyword == null}" th:href="@{/feed(page=${feed.page}, size=${feed.size}, prev=prev, posts=${feed.postsCount})}"
-        ><button type="button">Prev</button></a>
-        <a th:if="${feed.keyword == null}" th:href="@{/feed(page=${feed.page}, size=${feed.size}, next=next, posts=${feed.postsCount})}"
-        ><button type="button">Next</button></a>
+        <a th:if="${feed.keyword == null}"
+           th:href="@{/feed(page=${feed.page}, size=${feed.size}, prev=prev, posts=${feed.postsCount})}"
+        >
+            <button type="button">Prev</button>
+        </a>
+        <a th:if="${feed.keyword == null}"
+           th:href="@{/feed(page=${feed.page}, size=${feed.size}, next=next, posts=${feed.postsCount})}"
+        >
+            <button type="button">Next</button>
+        </a>
 
-        <a th:unless="${feed.keyword == null}" th:href="@{/feed(page=${feed.page}, size=${feed.size}, prev=prev, posts=${feed.postsCount}, keyword=${feed.keyword})}"
-        ><button type="button">Prev</button></a>
-        <a th:unless="${feed.keyword == null}" th:href="@{/feed(page=${feed.page}, size=${feed.size}, next=next, posts=${feed.postsCount}, keyword=${feed.keyword})}"
-        ><button type="button">Next</button></a>
+        <a th:unless="${feed.keyword == null}"
+           th:href="@{/feed(page=${feed.page}, size=${feed.size}, prev=prev, posts=${feed.postsCount}, keyword=${feed.keyword})}"
+        >
+            <button type="button">Prev</button>
+        </a>
+        <a th:unless="${feed.keyword == null}"
+           th:href="@{/feed(page=${feed.page}, size=${feed.size}, next=next, posts=${feed.postsCount}, keyword=${feed.keyword})}"
+        >
+            <button type="button">Next</button>
+        </a>
 
     </div>
 
@@ -104,28 +111,7 @@
 
 </article>
 
-<!--<div class="form-container" style="display: none;" id="postForm">
-    <h2>Create Post</h2>
-    <form th:action="@{/feed}" method="POST">
-        <label for="firstName">Name:</label>
-        <input type="text" id="firstName" name="firstName" required>
-        <label for="lastName">Фамилия:</label>
-        <input type="text" id="lastName" name="lastName" required>
-        <label for="age">Возраст:</label>
-        <input type="number" id="age" name="age" required>
-        <label for="active">Активен:</label>
-        <input type="checkbox" id="active" name="active">
-        <button type="submit">Добавить</button>
-    </form>
-</div>-->
-
 <script type="text/javascript" th:src="@{/static/script/js.js}"></script>
 
-<!--<script>-->
-<!--    function toggleForm() {-->
-<!--        const form = document.getElementById('userForm');-->
-<!--        form.style.display = form.style.display === 'none' ? 'block' : 'none';-->
-<!--    }-->
-<!--</script>-->
 </body>
 </html>

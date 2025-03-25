@@ -23,8 +23,6 @@ public class Post {
     @NonNull
     private List<String> tags;
     @NonNull
-    //private List<Comment> comments;
-    //private List<String> comments;
     private List<CommentDto> comments;
     private int likes;
 
@@ -32,15 +30,17 @@ public class Post {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Post post = (Post) o;
-        return Objects.equals(id, post.id) &&
+        return likes == post.likes &&
+                Objects.equals(id, post.id) &&
                 Objects.equals(name, post.name) &&
                 Objects.equals(imageUrl, post.imageUrl) &&
                 Objects.equals(description, post.description) &&
-                Objects.equals(tags, post.tags);
+                Objects.equals(tags, post.tags) &&
+                Objects.equals(comments, post.comments);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, imageUrl, description, tags);
+        return Objects.hash(id, name, imageUrl, description, tags, comments, likes);
     }
 }

@@ -90,14 +90,6 @@ public class Utilities {
                 .build();
     }
 
-    public Integer setPageCount(String str) {
-        return switch (str) {
-            case "twenty" -> 20;
-            case "fifty" -> 50;
-            default -> 10;
-        };
-    }
-
     public String toStringFromList(List<String> list, String separator) {
         StringBuilder builder = new StringBuilder();
         for (String s: list) {

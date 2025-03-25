@@ -16,10 +16,7 @@ public class PageProperties {
     Integer size;
     @NonNull
     List<PostsFeed> postsFeedList;
-    //@NonNull
     int postsCount;
     String keyword;
-//    @NonNull
-//    boolean hasNext;
 }
 

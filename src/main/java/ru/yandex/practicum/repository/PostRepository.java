@@ -3,7 +3,6 @@ package ru.yandex.practicum.repository;
 import ru.yandex.practicum.dto.CommentDto;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.PostDto;
-import ru.yandex.practicum.dto.UpdatePostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
 
@@ -11,11 +10,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PostRepository {
-    Integer findPostsCount();
 
-    List<PostsFeed> findAll();
-
-    void save(PostDto postDto);
+    void savePost(PostDto postDto);
 
     List<PostsFeed> findAllPosts(Integer offset, Integer limit);
 
@@ -34,6 +30,4 @@ public interface PostRepository {
     void updatePost(PostDto postDto);
 
     void updateComment(CommentDto commentDto);
-
-    //List<PostFeedDto> findAllPosts();
 }

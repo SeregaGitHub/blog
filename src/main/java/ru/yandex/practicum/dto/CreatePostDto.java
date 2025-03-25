@@ -14,6 +14,6 @@ public class CreatePostDto {
     private String imageUrl;
     @NonNull
     private String description;
-    //@NonNull
+    @NonNull
     private String tags;
 }

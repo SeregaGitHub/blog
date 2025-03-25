@@ -8,15 +8,14 @@ import ru.yandex.practicum.dto.CommentDto;
 import ru.yandex.practicum.dto.CreateCommentDto;
 import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.dto.UpdatePostDto;
+import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.service.PostService;
 import ru.yandex.practicum.util.PageProperties;
-import ru.yandex.practicum.util.PostProperties;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/feed")
 public class PostsFeedController {
-
     private final PostService service;
 
     @GetMapping
@@ -35,15 +34,14 @@ public class PostsFeedController {
 
     @GetMapping(value = "/{id}")
     public String findPost(Model model, @PathVariable(name = "id") Integer id) {
-        PostProperties postProperties = service.findPost(id);
-        model.addAttribute("post", postProperties.getPost());
-        model.addAttribute("updatePostDto", postProperties.getUpdatePostDto());
+        Post post = service.findPost(id);
+        model.addAttribute("post", post);
         return "post";
     }
 
     @PostMapping
     public String savePost(@ModelAttribute CreatePostDto createPostDto) {
-        service.save(createPostDto);
+        service.savePost(createPostDto);
         return "redirect:/feed";
     }
 

@@ -238,3 +238,11 @@
 23-Mar-2025 10:34:11.249 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
 23-Mar-2025 10:34:11.256 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
 23-Mar-2025 10:34:11.257 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+23-Mar-2025 16:15:34.942 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2025 16:15:35.121 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+23-Mar-2025 16:15:37.063 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+23-Mar-2025 16:15:37.064 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+23-Mar-2025 16:15:37.065 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@149162a4')
+23-Mar-2025 16:16:34.456 INFO [main] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2025 16:16:34.464 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+23-Mar-2025 16:16:34.464 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
