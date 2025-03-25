@@ -142,11 +142,17 @@ public class PostRepositoryImpl implements PostRepository {
     public void saveComment(CreateCommentDto createCommentDto) {
         jdbcTemplate.update(
                 """
-                        INSERT INTO comment(post_comment, post_id)
-                        VALUES
-                        (?, ?);
+                        BEGIN;
+                            INSERT INTO comment(post_comment, post_id)
+                            VALUES
+                            (?, ?);
+                        
+                            UPDATE post
+                        	SET commentsCount = commentsCount + 1
+                        	WHERE id = ?;
+                        COMMIT;
                         """,
-                createCommentDto.getCommentText(), createCommentDto.getPostId()
+                createCommentDto.getCommentText(), createCommentDto.getPostId(), createCommentDto.getPostId()
         );
     }
 
