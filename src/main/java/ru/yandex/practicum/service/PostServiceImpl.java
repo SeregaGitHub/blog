@@ -8,6 +8,7 @@ import ru.yandex.practicum.dto.CreatePostDto;
 import ru.yandex.practicum.dto.UpdatePostDto;
 import ru.yandex.practicum.model.Post;
 import ru.yandex.practicum.model.PostsFeed;
+import ru.yandex.practicum.repository.PostRepository;
 import ru.yandex.practicum.repository.PostRepositoryImpl;
 import ru.yandex.practicum.util.PageProperties;
 import ru.yandex.practicum.util.Utilities;
@@ -18,7 +19,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Service
 public class PostServiceImpl implements PostService {
-    private final PostRepositoryImpl repository;
+    private final PostRepository repository;
 
     @Override
     public void savePost(CreatePostDto createPostDto) {

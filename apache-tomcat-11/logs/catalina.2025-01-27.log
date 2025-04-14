@@ -1,6 +1,0 @@
-27-Jan-2025 01:24:31.030 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
-27-Jan-2025 01:24:31.036 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
-27-Jan-2025 01:24:31.041 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
-27-Jan-2025 01:24:31.118 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [blog] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
-27-Jan-2025 01:24:31.146 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
-27-Jan-2025 01:24:31.156 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

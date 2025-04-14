@@ -135,7 +135,8 @@ public class PostRepositoryImpl implements PostRepository {
                         .comments(Utilities.arrayToList(rs.getArray("comments")))
                         .build(), id);
 
-        return list.size() == 1 ? Optional.of(list.getFirst()) : Optional.empty();
+        //return list.size() == 1 ? Optional.of(list.getFirst()) : Optional.empty();
+        return list.size() == 1 ? Optional.of(list.get(0)) : Optional.empty();
     }
 
     @Override
